@@ -7,15 +7,17 @@ import java.util.function.Predicate;
 
 public class hw2 {
 
+    static <U> int size(Iterable<U> l){ // checks size
+        int s = 0;
+        for (U item : l)    s++;
+        return s;
+    }
+
     // argumments: list and function. type 1 = U(item), type 2 = V(list). return type list<V>
     static <U,V> List<V> map(Iterable<U> l, Function<U,V> f) {
         List<V> newList = new ArrayList<V>();
 
-        int size = 0;
-        // check size
-        for (U item : l)    size++;
-
-        if (size == 0)  return null;
+        if (size(l) == 0)  return null;
         else {
             for (U item : l)    newList.add(f.apply(item));
         }
@@ -23,22 +25,71 @@ public class hw2 {
         return newList;
     }
 
+    static <U> List<U> tail(Iterable<U> l){ // returns list of tailing l
+        List<U> t = new ArrayList<U>();
+        int i = 0;
 
-    static <U,V> V foldLeft(V e, Iterable<U>l, BiFunction<V,U,V> f){
-        return null;
+        for(U item : l){
+            if(i > 0) t.add(item);
+            i++;
+        }
+
+        return t;
+    }
+
+    static <U> U head(Iterable<U> l){ // returns the head
+        U h = null;
+
+        for(U item : l){
+            h = item;
+            break;
+        }
+
+        return h;
     }
 
 
+    static <U,V> V foldLeft(V e, Iterable<U> l, BiFunction<V,U,V> f){
+        List<U> tail;
+        U head;
+        if(l != null){
+            tail = tail(l);
+            head = head(l);
+        } else {
+            return e;
+        }
+
+        if (size(l) == 0)  return e;
+        else{
+            return foldLeft(f.apply(e, head), tail, f);
+        }
+    }
 
 
     static <U,V> V foldRight(V e, List<U>l, BiFunction<U,V,V> f){
-        return null;
+        List<U> tail;
+        U head;
+        if(l != null){
+            tail = tail(l);
+            head = head(l);
+        } else {
+            return e;
+        }
+
+        if (size(l) == 0)  return e;
+        else{
+            return f.apply(head, foldRight(e, tail, f));
+        }
     }
 
-
-
     static <U> List<U> filter(List<U> l, Predicate<U> p){
-        return null;
+        List<U> t = l;
+        for (U item : l){
+            if(p.test(item)){
+                t.remove(item);
+            }
+        }
+        return t;
     }
 
 

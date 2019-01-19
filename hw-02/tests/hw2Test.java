@@ -33,6 +33,55 @@ class hw2Test {
             return k + 1000;
         };
 
+        List<Integer> salary = new ArrayList<Integer>();
+        for(Person p : people){
+            salary.add(p.getSalary());
+        }
+        List<Integer> copy = salary;
+        salary = m.map(salary, Christmas_Bonus);
 
+    }
+
+    @Test
+    void testFoldLeft(){
+        List a = new ArrayList();
+        hw2 m = new hw2();
+        for (int i = 1; i <= 5; i++){
+            a.add(i);
+        }
+        BiFunction<String, Integer, String> f = (p,q) ->{
+          return (p + "[" + q + "]");
+        };
+        assertEquals("@[1][2][3][4][5]",m.foldLeft("@", a, f));
+        assertEquals("@", m.foldLeft("@", null, f));
+    }
+
+    @Test
+    void testFoldRight(){
+        List a = new ArrayList();
+        hw2 m = new hw2();
+        for (int i = 1; i <= 5; i++){
+            a.add(i);
+        }
+        BiFunction<Integer, String, String> h = (p,q) ->{
+            return (q + "[" + p + "]");
+        };
+        assertEquals("@[5][4][3][2][1]",m.foldRight("@", a, h));
+        assertEquals("@", m.foldRight("@", null, h));
+    }
+
+
+    @Test
+    void testFilter(){
+        List a = new ArrayList();
+        hw2 m = new hw2();
+        for (int i = 1; i <= 5; i++){
+            a.add(i);
+        }
+        Predicate<Integer> even = i -> {return(i % 2 == 0);};
+        a = m.filter(a, even);
+//        for (Integer i : a){
+//            assertTrue(i%2 != 0);
+//        }
     }
 }
