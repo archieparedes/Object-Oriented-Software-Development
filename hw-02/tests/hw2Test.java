@@ -73,15 +73,46 @@ class hw2Test {
 
     @Test
     void testFilter(){
-        List a = new ArrayList();
+        List<Person> people = new ArrayList<Person>();
         hw2 m = new hw2();
+        people.add(new Person(79000, "Aly P."));
+        people.add(new Person(123000, "Bob S."));
+        people.add(new Person(73400, "Sandy G."));
+        people.add(new Person(55000, "Sam P."));
+
+        m.filter(people, (Person p) -> {return (p.getSalary() < 70000);});
+
+        int size = 0;
+        for (Person p : people) {
+            assertNotEquals("Sam P.", p.name());
+            size++;
+        }
+        assertEquals(3, size);
+
+        size = 0;
+        m.filter(people, (Person p) -> {return (p.getSalary() >100000);});
+        for (Person p : people) {
+            assertNotEquals("Sam P.", p.name());
+            assertNotEquals("Bob S.", p.name());
+            size++;
+        }
+        assertEquals(2, size);
+    }
+
+    @Test
+    void testBinFoldLef(){
+        List<Integer> a = new ArrayList<Integer>();
+        hw2 m = new hw2();
+
         for (int i = 1; i <= 5; i++){
             a.add(i);
         }
-        Predicate<Integer> even = i -> {return(i % 2 == 0);};
-        a = m.filter(a, even);
-//        for (Integer i : a){
-//            assertTrue(i%2 != 0);
-//        }
+
+        BiFunction<Integer, Integer, Integer> f = (p,q) -> {if (p==q) return 1;
+        else return 0;};
+        m.binFoldLeft(5, a, f);
+        for(Integer i : a){
+            System.out.println(i);
+        }
     }
 }

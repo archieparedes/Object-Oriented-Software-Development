@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 import java.util.function.Function;
 import java.util.function.BiFunction;
 import java.util.function.Predicate;
@@ -52,10 +53,10 @@ public class hw2 {
     static <U,V> V foldLeft(V e, Iterable<U> l, BiFunction<V,U,V> f){
         List<U> tail;
         U head;
-        if(l != null){
+        if(l != null){ // not null
             tail = tail(l);
             head = head(l);
-        } else {
+        } else { // if null just return e
             return e;
         }
 
@@ -69,10 +70,10 @@ public class hw2 {
     static <U,V> V foldRight(V e, List<U>l, BiFunction<U,V,V> f){
         List<U> tail;
         U head;
-        if(l != null){
+        if(l != null){ // not null
             tail = tail(l);
             head = head(l);
-        } else {
+        } else { // if null just return e
             return e;
         }
 
@@ -83,20 +84,22 @@ public class hw2 {
     }
 
     static <U> List<U> filter(List<U> l, Predicate<U> p){
-        List<U> t = l;
-        for (U item : l){
-            if(p.test(item)){
-                t.remove(item);
+        for (Iterator<U> iterator = l.iterator(); iterator.hasNext(); ) {
+            U value = iterator.next();
+            if (p.test(value)) {
+                iterator.remove();
             }
         }
-        return t;
+
+        return l;
     }
 
-
-
-
     static <U> U binFoldLeft(U e, List<U>l, BiFunction<U,U,U> f){
-        return null;
+        U i = e;
+
+        f.apply(binFoldLeft(e, (l.subList(0, l.size()/2)), f),
+                binFoldLeft(e, (l.subList(l.size()/2, l.size())),f));
+        return i;
     }
 
     public static void main(String[] args) {
