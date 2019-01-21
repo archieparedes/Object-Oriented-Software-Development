@@ -89,6 +89,7 @@ class hw2Test {
         }
         assertEquals(3, size);
 
+        // filter greater than 100000
         size = 0;
         m.filter(people, (Person p) -> {return (p.getSalary() >100000);});
         for (Person p : people) {
@@ -100,7 +101,7 @@ class hw2Test {
     }
 
     @Test
-    void testBinFoldLef(){
+    void testBinFoldLeft(){
         List<Integer> a = new ArrayList<Integer>();
         hw2 m = new hw2();
 
@@ -108,9 +109,13 @@ class hw2Test {
             a.add(i);
         }
 
-        BiFunction<Integer, Integer, Integer> f = (p,q) -> {if (p==q) return 1;
-        else return 0;};
-        m.binFoldLeft(5, a, f);
+        BiFunction<Integer, Integer, Integer> f = (p, q) ->{
+            if(q == 5)
+                return p++;
+            else
+                return p;
+        };
+        assertEquals(1, m.binFoldLeft(5, a, f));
         for(Integer i : a){
             System.out.println(i);
         }

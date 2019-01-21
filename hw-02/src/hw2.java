@@ -1,4 +1,6 @@
-
+/**
+* @author Archie Paredes
+*/
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
@@ -7,13 +9,18 @@ import java.util.function.BiFunction;
 import java.util.function.Predicate;
 
 public class hw2 {
-
+    /**
+     * @return size of list l
+     */
     static <U> int size(Iterable<U> l){ // checks size
         int s = 0;
         for (U item : l)    s++;
         return s;
     }
 
+    /**
+     * @return list mapped to function f
+     */
     // argumments: list and function. type 1 = U(item), type 2 = V(list). return type list<V>
     static <U,V> List<V> map(Iterable<U> l, Function<U,V> f) {
         List<V> newList = new ArrayList<V>();
@@ -26,6 +33,9 @@ public class hw2 {
         return newList;
     }
 
+    /**
+     * @return list l excluding the first product
+     */
     static <U> List<U> tail(Iterable<U> l){ // returns list of tailing l
         List<U> t = new ArrayList<U>();
         int i = 0;
@@ -38,6 +48,9 @@ public class hw2 {
         return t;
     }
 
+    /**
+     * @return the first product of l
+     */
     static <U> U head(Iterable<U> l){ // returns the head
         U h = null;
 
@@ -49,7 +62,9 @@ public class hw2 {
         return h;
     }
 
-
+    /**
+     * @return list folded left with object e in function f
+     */
     static <U,V> V foldLeft(V e, Iterable<U> l, BiFunction<V,U,V> f){
         List<U> tail;
         U head;
@@ -66,7 +81,9 @@ public class hw2 {
         }
     }
 
-
+    /**
+     * @return list folded right with object e in function f
+     */
     static <U,V> V foldRight(V e, List<U>l, BiFunction<U,V,V> f){
         List<U> tail;
         U head;
@@ -82,7 +99,9 @@ public class hw2 {
             return f.apply(head, foldRight(e, tail, f));
         }
     }
-
+    /**
+     * @return list l with a product removed using Predicate p
+     */
     static <U> List<U> filter(List<U> l, Predicate<U> p){
         for (Iterator<U> iterator = l.iterator(); iterator.hasNext(); ) {
             U value = iterator.next();
@@ -95,11 +114,17 @@ public class hw2 {
     }
 
     static <U> U binFoldLeft(U e, List<U>l, BiFunction<U,U,U> f){
-        U i = e;
+        U result = e;
+        int size = l.size();
+        Iterator<U> iterator = l.iterator();
+        if (l != null) {
+            if (iterator.hasNext())
+                f.apply(binFoldLeft(e, (l.subList(0, size / 2)), f),    binFoldLeft(e, (l.subList((size / 2 + 1), size)), f));
+            else
+                return e;
+        }
 
-        f.apply(binFoldLeft(e, (l.subList(0, l.size()/2)), f),
-                binFoldLeft(e, (l.subList(l.size()/2, l.size())),f));
-        return i;
+        return e;
     }
 
     public static void main(String[] args) {
