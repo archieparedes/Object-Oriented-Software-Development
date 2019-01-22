@@ -1,3 +1,6 @@
+/**
+ * @author Archie_Paredes
+ */
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,13 +10,22 @@ import java.util.function.BiFunction;
 import java.util.function.Predicate;
 
 public class hw2 {
-
+    /**
+     *
+     * @param l iterable list
+     * @return size of the list
+     */
     static <U> int size(Iterable<U> l){ // checks size
         int s = 0;
         for (U item : l)    s++;
         return s;
     }
-
+    /**
+     *
+     * @param l iterable list
+     * @param f Function that passes l
+     * @return list mapped to a function
+     */
     // argumments: list and function. type 1 = U(item), type 2 = V(list). return type list<V>
     static <U,V> List<V> map(Iterable<U> l, Function<U,V> f) {
         List<V> newList = new ArrayList<V>();
@@ -25,7 +37,11 @@ public class hw2 {
 
         return newList;
     }
-
+    /**
+     *
+     * @param l iterable list
+     * @return List of of l excluding the first product
+     */
     static <U> List<U> tail(Iterable<U> l){ // returns list of tailing l
         List<U> t = new ArrayList<U>();
         int i = 0;
@@ -37,7 +53,11 @@ public class hw2 {
 
         return t;
     }
-
+    /**
+     *
+     * @param l iterable list
+     * @return The first product of List l
+     */
     static <U> U head(Iterable<U> l){ // returns the head
         U h = null;
 
@@ -49,8 +69,16 @@ public class hw2 {
         return h;
     }
 
-
+    /**
+     *
+     * @param e generic object
+     * @param l generic list
+     * @param f BiFunction that passes generic object V and U
+     * @return generic object V
+     */
     static <U,V> V foldLeft(V e, Iterable<U> l, BiFunction<V,U,V> f){
+        if (e == null) throw new NullPointerException();
+        if (f == null) throw new NullPointerException();
         List<U> tail;
         U head;
         if(l != null){ // not null
@@ -66,8 +94,16 @@ public class hw2 {
         }
     }
 
-
+    /**
+     *
+     * @param e generic object of V
+     * @param l generic list of object U
+     * @param f BiFunction that passes generic object V and U
+     * @return generic object V
+     */
     static <U,V> V foldRight(V e, List<U>l, BiFunction<U,V,V> f){
+        if (e == null) throw new NullPointerException();
+        if (f == null) throw new NullPointerException();
         List<U> tail;
         U head;
         if(l != null){ // not null
@@ -77,29 +113,54 @@ public class hw2 {
             return e;
         }
 
-        if (size(l) == 0)  return e;
+        if (l.size() == 0)  return e;
         else{
             return f.apply(head, foldRight(e, tail, f));
         }
     }
 
+    /**
+     *
+     * @param l list of generic object U
+     * @param p Predicate function returns boolean
+     * @return l filtered out by Predicate p
+     */
     static <U> List<U> filter(List<U> l, Predicate<U> p){
+        if (p == null) throw new NullPointerException();
+        if (l == null)  throw new NullPointerException();
+        if (l.size() == 0)  return l;
+
         for (Iterator<U> iterator = l.iterator(); iterator.hasNext(); ) {
             U value = iterator.next();
             if (p.test(value)) {
                 iterator.remove();
             }
         }
-
         return l;
     }
 
+    /**
+     *
+     * @param e generic object U
+     * @param l generic list of object U
+     * @param f BiFunction that takes in same object U
+     * @return values returned from BiFuntion f
+     */
     static <U> U binFoldLeft(U e, List<U>l, BiFunction<U,U,U> f){
-        U i = e;
+        if (e == null) throw new NullPointerException();
+        if (f == null) throw new NullPointerException();
+        if(l == null || l.size() == 0) return e;
+        int sizeL = l.size(); // optimization
+        if (sizeL > 1){
+            U e2 = e;
+            e2 = binFoldLeft(e2, (l.subList(0, sizeL/2)), f);
+            e2 = binFoldLeft(e2, (l.subList(sizeL/2, sizeL)),f);
+            return e2;
+        }
+        else{
+           return f.apply(e, l.get(0));
+        }
 
-        f.apply(binFoldLeft(e, (l.subList(0, l.size()/2)), f),
-                binFoldLeft(e, (l.subList(l.size()/2, l.size())),f));
-        return i;
     }
 
     public static void main(String[] args) {

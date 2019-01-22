@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d29646a-6cf6-41e9-96c9-75c41d704453" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hw-01/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw-02/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-02/Person.class" afterDir="false" />
@@ -19,15 +19,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.52918285">
+    <splitter split-orientation="horizontal" split-proportion="0.40911618">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/hw2.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="154">
-                  <caret line="93" column="17" lean-forward="true" selection-end-line="140" selection-end-column="1" />
+                <state relative-caret-position="286">
+                  <caret line="13" column="6" selection-end-line="201" selection-end-column="1" />
                   <folding>
+                    <element signature="n#!!doc" expanded="true" />
                     <element signature="imports" expanded="true" />
                   </folding>
                 </state>
@@ -39,13 +40,13 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/tests/hw2Test.java">
+            <entry file="file://$PROJECT_DIR$/src/hw2.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="106" />
+                <state relative-caret-position="132">
+                  <caret line="13" column="6" selection-end-line="201" selection-end-column="1" />
                   <folding>
+                    <element signature="n#!!doc" expanded="true" />
                     <element signature="imports" expanded="true" />
-                    <element signature="e#3029#3038#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -69,12 +70,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tests/hw2Test.java" />
         <option value="$PROJECT_DIR$/src/hw2.java" />
+        <option value="$PROJECT_DIR$/tests/hw2Test.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -87,6 +88,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -99,17 +102,10 @@
               <item name="hw-02" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="hw-02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hw-02" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -118,13 +114,13 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548003898341" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548130973478" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/lib/junit.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -146,22 +142,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.hw2Test.testBinFoldLef">
+  <component name="RunManager" selected="JUnit.hw2Test">
     <configuration name="hw2Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw-02" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="hw2Test" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="hw2Test.testBinFoldLef" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hw-02" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="hw2Test" />
-      <option name="METHOD_NAME" value="testBinFoldLef" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -196,20 +182,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="hw2Test.testMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hw-02" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="hw2Test" />
+      <option name="METHOD_NAME" value="testMap" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="JUnit.hw2Test" />
-      <item itemvalue="JUnit.hw2Test.testFoldLeft" />
       <item itemvalue="JUnit.hw2Test.testFoldRight" />
       <item itemvalue="JUnit.hw2Test.testFilter" />
-      <item itemvalue="JUnit.hw2Test.testBinFoldLef" />
+      <item itemvalue="JUnit.hw2Test.testFoldLeft" />
+      <item itemvalue="JUnit.hw2Test" />
+      <item itemvalue="JUnit.hw2Test.testMap" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.hw2Test.testBinFoldLef" />
-        <item itemvalue="JUnit.hw2Test.testFilter" />
+        <item itemvalue="JUnit.hw2Test" />
         <item itemvalue="JUnit.hw2Test.testFoldRight" />
         <item itemvalue="JUnit.hw2Test.testFoldLeft" />
-        <item itemvalue="JUnit.hw2Test" />
+        <item itemvalue="JUnit.hw2Test.testMap" />
+        <item itemvalue="JUnit.hw2Test.testFilter" />
       </list>
     </recent_temporary>
   </component>
@@ -224,43 +220,48 @@
       <option name="presentableId" value="Default" />
       <updated>1547844545605</updated>
       <workItem from="1547932371859" duration="11625000" />
+      <workItem from="1548024460373" duration="3231000" />
+      <workItem from="1548099379538" duration="252000" />
+      <workItem from="1548099704546" duration="5711000" />
+      <workItem from="1548106555492" duration="33000" />
+      <workItem from="1548107440538" duration="12720000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="hw2Test_testFilter - 2019.01.19 at 17h 03m 57s.xml">
+    <history-entry file="hw2Test_testFilter - 2019.01.21 at 21h 29m 53s.xml">
       <configuration name="hw2Test.testFilter" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="hw2Test_testFoldLeft - 2019.01.19 at 17h 17m 54s.xml">
+    <history-entry file="hw2Test_testFilter - 2019.01.21 at 21h 31m 24s.xml">
+      <configuration name="hw2Test.testFilter" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="hw2Test_testFilter - 2019.01.21 at 21h 34m 56s.xml">
+      <configuration name="hw2Test.testFilter" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="hw2Test_testMap - 2019.01.21 at 21h 54m 08s.xml">
+      <configuration name="hw2Test.testMap" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="hw2Test_testMap - 2019.01.21 at 21h 55m 06s.xml">
+      <configuration name="hw2Test.testMap" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="hw2Test - 2019.01.21 at 22h 01m 09s.xml">
+      <configuration name="hw2Test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="hw2Test_testMap - 2019.01.21 at 22h 02m 01s.xml">
+      <configuration name="hw2Test.testMap" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="hw2Test_testFoldLeft - 2019.01.21 at 22h 04m 22s.xml">
       <configuration name="hw2Test.testFoldLeft" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="hw2Test_testFoldRight - 2019.01.19 at 17h 18m 01s.xml">
+    <history-entry file="hw2Test_testFoldRight - 2019.01.21 at 22h 05m 25s.xml">
       <configuration name="hw2Test.testFoldRight" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="hw2Test_testFilter - 2019.01.19 at 17h 25m 03s.xml">
-      <configuration name="hw2Test.testFilter" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="hw2Test_testFilter - 2019.01.19 at 17h 30m 00s.xml">
-      <configuration name="hw2Test.testFilter" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="hw2Test_testFilter - 2019.01.19 at 17h 35m 02s.xml">
-      <configuration name="hw2Test.testFilter" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="hw2Test_testFilter - 2019.01.19 at 17h 38m 35s.xml">
-      <configuration name="hw2Test.testFilter" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="hw2Test_testFilter - 2019.01.19 at 17h 59m 26s.xml">
-      <configuration name="hw2Test.testFilter" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="hw2Test_testBinFoldLef - 2019.01.19 at 18h 23m 42s.xml">
-      <configuration name="hw2Test.testBinFoldLef" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="hw2Test_testBinFoldLef - 2019.01.19 at 18h 25m 00s.xml">
-      <configuration name="hw2Test.testBinFoldLef" configurationId="JUnit" />
+    <history-entry file="hw2Test - 2019.01.21 at 22h 08m 10s.xml">
+      <configuration name="hw2Test" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11625000" />
+    <option name="totallyTimeSpent" value="33572000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -272,11 +273,9 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32555556" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23555556" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39914164" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -284,9 +283,9 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3288889" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32777777" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -295,19 +294,15 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven" order="8" />
+      <window_info anchor="right" id="Database" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/hw2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="4" selection-end-line="73" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/hw2.java" />
     <entry file="file://$PROJECT_DIR$/../../Java/workspace/JavaWork/Software_Test/homework1/src/main/java/org/depaul/App.java" />
     <entry file="file://$PROJECT_DIR$/hw-02.iml">
       <provider selected="true" editor-type-id="text-editor">
@@ -320,23 +315,25 @@
     <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/util/function/Function.java" />
     <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/util/ArrayList.java" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/classCode.java" />
-    <entry file="file://$PROJECT_DIR$/src/hw2.java">
+    <entry file="file://$PROJECT_DIR$/tests/hw2Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="93" column="17" lean-forward="true" selection-end-line="140" selection-end-column="1" />
+        <state relative-caret-position="242">
+          <caret line="11" column="19" lean-forward="true" selection-end-line="241" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1853#1862#0" expanded="true" />
+            <element signature="e#2090#2098#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hw2Test.java">
+    <entry file="file://$PROJECT_DIR$/src/hw2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="106" />
+        <state relative-caret-position="132">
+          <caret line="13" column="6" selection-end-line="201" selection-end-column="1" />
           <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#3029#3038#0" expanded="true" />
           </folding>
         </state>
       </provider>
