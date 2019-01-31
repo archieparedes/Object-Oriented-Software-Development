@@ -138,33 +138,51 @@ final class VideoObj implements Comparable {
    * @throws ClassCastException if thatObject has an incompatible type.
    */
   public int compareTo(Object thatObject) {
-    VideoObj i = (VideoObj) thatObject;
-    // compare year
-    if (i._year < _year) return -1;
-    if (i._year > _year) return 1;
 
-    // compare title
-    int a, b;
-    if (i._title.length() < _title.length()) return -1;
-    if (i._title.length() > _title.length()) return 1;
-    for(int j = 0; j < i._title.length(); j++){
-      a = i._title.charAt(j);
-      b = _title.charAt(j);
-      if (a < b) return -1;
-      if (a > b) return 1;
-    }
+    VideoObj that = (VideoObj) thatObject;
 
-    // compare director
-    if (i._director.length() < _director.length()) return -1;
-    if (i._director.length() > _director.length()) return 1;
-    for(int j = 0; j < i._director.length(); j++){
-      a = i._director.charAt(j);
-      b = _director.charAt(j);
-      if (a < b) return -1;
-      if (a > b) return 1;
-    }
+    int titleCompare = _title.compareTo(that._title);
+    if(titleCompare != 0)
+      return titleCompare;
+
+    int yearCompare = _year - that._year;
+    if(yearCompare != 0)
+      return yearCompare;
+
+    int directorCompare = _director.compareTo(that._director);
+    if(directorCompare != 0)
+      return directorCompare;
 
     return 0;
+
+    /////////////////////////////////////////////
+//    VideoObj i = (VideoObj) thatObject;
+//    // compare year
+//    if (i._year < _year) return -1;
+//    if (i._year > _year) return 1;
+//
+//    // compare title
+//    int a, b;
+//    if (i._title.length() < _title.length()) return -1;
+//    if (i._title.length() > _title.length()) return 1;
+//    for(int j = 0; j < i._title.length(); j++){
+//      a = i._title.charAt(j);
+//      b = _title.charAt(j);
+//      if (a < b) return -1;
+//      if (a > b) return 1;
+//    }
+//
+//    // compare director
+//    if (i._director.length() < _director.length()) return -1;
+//    if (i._director.length() > _director.length()) return 1;
+//    for(int j = 0; j < i._director.length(); j++){
+//      a = i._director.charAt(j);
+//      b = _director.charAt(j);
+//      if (a < b) return -1;
+//      if (a > b) return 1;
+//    }
+//
+//    return 0;
   }
 
   /**

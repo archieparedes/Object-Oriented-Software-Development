@@ -31,7 +31,6 @@ final class InventorySet {
   public int size() {
     int size = 0;
     for (Record r : _data.values()){
-      //size += r.numOwned;
       if(r != null) size++; // if there's a record, add 1 to size
     }
     return size;
@@ -54,7 +53,7 @@ final class InventorySet {
    */
   public Collection toCollection() {
     // Recall that an ArrayList is a Collection.
-    ArrayList<Record> Record_Collection = new ArrayList<Record>(); // Array List of records
+    ArrayList<Record> Record_Collection = new ArrayList<>(); // Array List of records
     for (Record r : _data.values()){
       Record_Collection.add(r.copy()); // acquires copies only
     }
@@ -75,22 +74,30 @@ final class InventorySet {
    * @postcondition changes the record for the video
    */
   public void addNumOwned(VideoObj video, int change) {
+    if(video == null)   throw new IllegalArgumentException("Invalid parameters");
+
+    Record oldRecord = _data.get(video);
+    Record newRecord;
+
     if(!_data.containsKey(video) && change > 0){ // if record doesn't exists and change is positive, create new record
-      Record newRecord = new Record(video, change, 0, 0);
+      newRecord = new Record(video, change, 0, 0);
       _data.put(video, newRecord);
       return;
     }
-    else if(_data.containsKey(video)) { // if the record is present
-        Record oldRecord = _data.get(video);
-        Record newRecord = new Record(video, change, oldRecord.numOut, oldRecord.numRentals);
+    else if(_data.containsKey(video) && change >= 1) { // if the record is present
+        newRecord = new Record(video, oldRecord.numOwned += change, oldRecord.numOut, oldRecord.numRentals);
         _data.replace(video, oldRecord, newRecord); // numOwned is modified
+      return;
     }
-
-    if(_data.get(video).numOwned < 1){ // if the change make numOwned less than 1
+    else if (_data.containsKey(video) && change < 1){
+      if (oldRecord.numOwned + change < oldRecord.numOut) throw new IllegalArgumentException("Videos are rented out");
+      if(oldRecord.numOwned + change <= 0){
         _data.remove(video);
-      //_data.put(video, null); // deletes record
+      }
+      newRecord = new Record(video, oldRecord.numOwned += change, oldRecord.numOut, oldRecord.numRentals);
+      _data.replace(video, oldRecord, newRecord);
+      return;
     }
-
   }
 
   /**
@@ -106,7 +113,6 @@ final class InventorySet {
     } else {
       _data.get(video).numOut++; // amount of videos currently out increases
       _data.get(video).numRentals++; // amount of rentals increase
-
     }
   }
 
@@ -132,9 +138,6 @@ final class InventorySet {
    */
   public void clear() {
       _data.clear();
-//    for (VideoObj i : _data.keySet()){
-//      _data.put(i, null); // sets records to null
-//    }
   }
 
   /**
