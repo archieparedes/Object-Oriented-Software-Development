@@ -1,5 +1,6 @@
 /**
  * @author Archie_Paredes
+ * @version 1.0
  */
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class hw2 {
      * @param f Function that passes l
      * @return list mapped to a function
      */
-    // argumments: list and function. type 1 = U(item), type 2 = V(list). return type list<V>
+
     static <U,V> List<V> map(Iterable<U> l, Function<U,V> f) {
         List<V> newList = new ArrayList<V>();
 
@@ -126,7 +127,7 @@ public class hw2 {
      * @return l filtered out by Predicate p
      */
     static <U> List<U> filter(List<U> l, Predicate<U> p){
-        if (p == null) throw new NullPointerException();
+        if (p == null) return l;
         if (l == null)  throw new NullPointerException();
         if (l.size() == 0)  return l;
 

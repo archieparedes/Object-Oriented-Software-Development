@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d29646a-6cf6-41e9-96c9-75c41d704453" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../AssertExp1/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hw-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hw-01/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-02/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-02/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-02/hw2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-02/hw2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/hw-02/hw2Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/hw-02/hw2Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hw2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hw2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/hw2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/hw2Test.java" afterDir="false" />
     </list>
@@ -19,14 +16,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.40911618">
+    <splitter split-orientation="horizontal" split-proportion="0.4317549">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/hw2.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="286">
-                  <caret line="13" column="6" selection-end-line="201" selection-end-column="1" />
+                <state relative-caret-position="-3344">
+                  <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                     <element signature="imports" expanded="true" />
@@ -40,10 +37,10 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/hw2.java">
+            <entry file="file://$PROJECT_DIR$/tests/hw2Test.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="132">
-                  <caret line="13" column="6" selection-end-line="201" selection-end-column="1" />
+                <state relative-caret-position="66">
+                  <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                     <element signature="imports" expanded="true" />
@@ -72,11 +69,13 @@
       <list>
         <option value="$PROJECT_DIR$/src/hw2.java" />
         <option value="$PROJECT_DIR$/tests/hw2Test.java" />
+        <option value="$PROJECT_DIR$/../AssertExp1.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="953" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="392" />
+    <option name="y" value="-26" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -88,8 +87,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -114,10 +113,10 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548130973478" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548195708894" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/lib/junit.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hw-01" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -128,6 +127,9 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Archie\Documents\Object-Oriented-Software-Development\hw-02" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -225,16 +227,14 @@
       <workItem from="1548099704546" duration="5711000" />
       <workItem from="1548106555492" duration="33000" />
       <workItem from="1548107440538" duration="12720000" />
+      <workItem from="1548130787527" duration="1063000" />
+      <workItem from="1548192002063" duration="3331000" />
+      <workItem from="1548205172789" duration="1287000" />
+      <workItem from="1548796782143" duration="151000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="hw2Test_testFilter - 2019.01.21 at 21h 29m 53s.xml">
-      <configuration name="hw2Test.testFilter" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="hw2Test_testFilter - 2019.01.21 at 21h 31m 24s.xml">
-      <configuration name="hw2Test.testFilter" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="hw2Test_testFilter - 2019.01.21 at 21h 34m 56s.xml">
       <configuration name="hw2Test.testFilter" configurationId="JUnit" />
     </history-entry>
@@ -259,14 +259,20 @@
     <history-entry file="hw2Test - 2019.01.21 at 22h 08m 10s.xml">
       <configuration name="hw2Test" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="hw2Test - 2019.01.21 at 22h 22m 59s.xml">
+      <configuration name="hw2Test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="hw2Test - 2019.01.22 at 15h 27m 14s.xml">
+      <configuration name="hw2Test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33572000" />
+    <option name="totallyTimeSpent" value="39404000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.041044775" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.04317697" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -283,7 +289,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32777777" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3211111" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -315,22 +321,28 @@
     <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/util/function/Function.java" />
     <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/util/ArrayList.java" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/classCode.java" />
-    <entry file="file://$PROJECT_DIR$/tests/hw2Test.java">
+    <entry file="file://$PROJECT_DIR$/../../Software Testing/Triangle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="19" lean-forward="true" selection-end-line="241" selection-end-column="1" />
+        <state relative-caret-position="-1882" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Triangle.java" />
+    <entry file="file://$PROJECT_DIR$/../AssertExp1.java" />
+    <entry file="file://$PROJECT_DIR$/src/hw2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3344">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
           <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1853#1862#0" expanded="true" />
-            <element signature="e#2090#2098#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw2.java">
+    <entry file="file://$PROJECT_DIR$/tests/hw2Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="13" column="6" selection-end-line="201" selection-end-column="1" />
+        <state relative-caret-position="66">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -378,7 +390,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>9</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -403,6 +415,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>junit</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

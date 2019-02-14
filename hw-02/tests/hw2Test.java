@@ -1,3 +1,8 @@
+/**
+ * @author Archie_Paredes
+ * @version 1.0
+ */
+
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -154,7 +159,14 @@ class hw2Test {
         people.add(new Person(55000, "Sam P."));
         // filters out anyone under 70k salary
         m.filter(people, (Person p) -> {return (p.getSalary() < 70000);});
-
+        // Predicate<Person> lessThan70k = new Predicate<Person>() {
+        //        @Override
+        //        public boolean test(Person p)
+        //        {
+        //            return p.getSalary() < 70000;
+        //        }
+        //    };
+        // m.filter(people, lessThan70k);
         int size = 0;
         for (Person p : people) {
             assertNotEquals("Sam P.", p.name());
@@ -165,6 +177,14 @@ class hw2Test {
         size = 0;
         // filters out anyone over 100k salary
         m.filter(people, (Person p) -> {return (p.getSalary() > 100000);});
+        // Predicate<Person> greaterThan100k = new Predicate<Person>() {
+        //        @Override
+        //        public boolean test(Person p)
+        //        {
+        //            return p.getSalary() > 100000;
+        //        }
+        //    };
+        // m.filter(people, greaterThan100k);
         for (Person p : people) {
             assertNotEquals("Sam P.", p.name());
             assertNotEquals("Bob S.", p.name());
