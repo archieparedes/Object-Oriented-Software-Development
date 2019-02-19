@@ -11,9 +11,7 @@ import junit.framework.TestCase;
 
 public class OLDtest1 extends TestCase {
     private Inventory _inventory = Data.newInventory();
-//    public OLDtest1(String name){
-//        super(name);
-//    }
+
 
     Video i = Data.newVideo("The Protector", 2005, "Prachya Pinkaew");
     Video i_2 = Data.newVideo("The_Protector", 2005, "Prachya Pinkaew");
@@ -84,34 +82,29 @@ public class OLDtest1 extends TestCase {
 
         Iterator r = _inventory.iterator(f);
         Iterator s = _inventory.iterator(f2);
-        while(r.hasNext()){
-            System.out.println(r.next().toString());
-        }
-        while(s.hasNext()){
-            System.out.println(s.next().toString());
-        }
-//        String w = r.next().toString();
-//        String x = r.next().toString();
-//        String y = r.next().toString();
-//        String z = r.next().toString();
-//
-//        // bad way to check if something is sorted
-//        assertEquals(0, w.compareTo(w));
-//        assertTrue( w.compareTo(x) < 0);
-//        assertTrue( w.compareTo(y) < 0);
-//        assertTrue(w.compareTo(z) < 0);
-//
-//        assertEquals(0, x.compareTo(x));
-//        assertTrue( x.compareTo(y) < 0);
-//        assertTrue( x.compareTo(z) < 0);
-//        assertTrue(x.compareTo(w) > 0);
-//
-//        assertTrue(y.compareTo(z) < 0);
-//        assertEquals(0, y.compareTo(y));
-//        assertTrue(y.compareTo(x) > 0);
-//        assertTrue(y.compareTo(w) > 0);
-//
-//        assertFalse(r.hasNext()); // done
+
+        String w = r.next().toString();
+        String x = r.next().toString();
+        String y = r.next().toString();
+        String z = r.next().toString();
+
+        // bad way to check if something is sorted
+        assertEquals(0, w.compareTo(w));
+        assertTrue( w.compareTo(x) < 0);
+        assertTrue( w.compareTo(y) < 0);
+        assertTrue(w.compareTo(z) < 0);
+
+        assertEquals(0, x.compareTo(x));
+        assertTrue( x.compareTo(y) < 0);
+        assertTrue( x.compareTo(z) < 0);
+        assertTrue(x.compareTo(w) > 0);
+
+        assertTrue(y.compareTo(z) < 0);
+        assertEquals(0, y.compareTo(y));
+        assertTrue(y.compareTo(x) > 0);
+        assertTrue(y.compareTo(w) > 0);
+
+        assertFalse(r.hasNext()); // done
     }
 
     /////////////////////////////

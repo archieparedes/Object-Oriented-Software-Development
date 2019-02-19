@@ -9,14 +9,14 @@ public class VideoTEST extends TestCase {
   }
   public void testHashCode() {
     Assert.assertEquals
-      (-875826552,
-       new VideoObj("None", 2009, "Zebra").hashCode());
+            (-875826552,
+                    new VideoObj("None", 2009, "Zebra").hashCode());
     Assert.assertEquals
-      (-1391078111,
-       new VideoObj("Blah", 1954, "Cante").hashCode());
+            (-1391078111,
+                    new VideoObj("Blah", 1954, "Cante").hashCode());
   }
 
-  public void testEquals() { 
+  public void testEquals() {
     String title = "A";
     int year = 2009;
     String director = "Zebra";
@@ -32,7 +32,7 @@ public class VideoTEST extends TestCase {
     Assert.assertFalse( a.equals( null ) );
   }
 
-  public void testCompareTo() { 
+  public void testCompareTo() {
     String title = "A", title2 = "B";
     int year = 2009, year2 = 2010;
     String director = "Zebra", director2 = "Zzz";

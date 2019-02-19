@@ -1,77 +1,105 @@
 package shop.data;
-import shop.command.Command;
+
+import shop.command.RerunnableCommand;
 import shop.command.UndoableCommand;
 
 /**
- * @author Archie_Paredes
- * This is list of commands a renter can use to check in/out videos from Inventory.
- * Shop owners can make a new Inventory, add new videos to inventory, and clear the inventory.
+ * A static class for accessing data objects.
  */
-public class Data{
+public class Data {
+  private Data() {}
+  /**
+   * @return a new Inventory.
+   */
+  static public final Inventory newInventory() {
+    return new InventorySet();
+  }
+
+  /**
+   * Factory method for Video objects.
+   * Title and director are "trimmed" to remove leading and final space.
+   * @throws IllegalArgumentException if Video invariant violated.
+     *
+     * @param title title of video
+     * @param year year made
+     * @param director director name
+     * @return new VideoObj
+     */
+  static public Video newVideo(String title, int year, String director) {
+      return new VideoObj(title, year, director);
+  }
+
+  /**
+   * Returns a command to add or remove copies of a video from the inventory.
+   * The returned command has the following behavior:
+   *
+   * If a video record is not already present (and change is
+   * positive), a record is created.
+   * If a record is already present, numOwned is
+   * modified using change.
+   * If change brings the number of copies to be less
+   * than one, the record is removed from the inventory.
+   * @param inventory inventoryObj
+   * @param video the video to be added.
+   * @param change the number of copies to add (or remove if negative).
+   * @throws IllegalArgumentException if inventory not created by a call to newInventory.
+   * @return new CmdAdd
+   */
+  static public UndoableCommand newAddCmd(Inventory inventory, Video video, int change) {
+      if (!(inventory instanceof InventorySet))
+          throw new IllegalArgumentException();
+      return new CmdAdd((InventorySet) inventory, video, change);
+  }
+
+  /**
+   * @param inventory inventory
+   * @param video the video to be checked out.
+   * @return Returns a command to check out a video.
+   */
+  static public UndoableCommand newOutCmd(Inventory inventory, Video video) {
+      if (!(inventory instanceof InventorySet))
+          throw new IllegalArgumentException();
+      return new CmdOut((InventorySet)inventory, video);
+  }
+  
+  /**
+   * @param inventory inventory
+   * @param video the video to be checked in.
+   * @return Returns a command to check in a video.
+   */
+  static public UndoableCommand newInCmd(Inventory inventory, Video video) {
+      if (!(inventory instanceof InventorySet))
+          throw new IllegalArgumentException();
+      return new CmdIn((InventorySet)inventory, video);
+  }
+  
+  /**
+   * @param inventory inventoryObj
+   * @return a command to remove all records from the inventory.
+   */
+  static public UndoableCommand newClearCmd(Inventory inventory) {
+//      if (!(inventory instanceof InventorySet))
+//          throw new IllegalArgumentException();
+      return new CmdClear((InventorySet) inventory);
+  }
+
     /**
      *
-     * @param inventory Video, Record Inventory
-     * @param video Video
-     * @param change Change in video stock
-     * @return Returns a command to add or remove copies of video
+     * @param inventory inventory
+     * @return a command to undo that will undo the last successful UndoableCommand.
      */
-    public static Command newAddCmd(Inventory inventory, Video video, int change) {
-        return new CmdAdd((InventorySet)inventory, (VideoObj)video, change);
-    }
+  static public RerunnableCommand newUndoCmd(Inventory inventory) {
+      // get command history and undo
+      return ((InventorySet)inventory).getHistory().getUndo();
+  }
 
     /**
      *
-     * @param inventory Video, Record Inventory
-     * @return Returns a command to remove every record in inventory
+     * @param inventory  inventory
+     * @return a command to redo that last successfully undone command.
      */
-    public static Command newClearCmd(Inventory inventory){
-        return new CmdClear((InventorySet)inventory);
-    }
-
-    /**
-     *
-     * @param inventory Video, Record Inventory
-     * @param video Video
-     * @return Returns a command to check in video from inventory
-     */
-    public static Command newInCmd(Inventory inventory, Video video) {
-        return new CmdIn((InventorySet)inventory, (VideoObj)video);
-    }
-
-    /**
-     *
-     * @return new inventory
-     */
-    public static Inventory newInventory() {
-        return new InventorySet();
-    }
-
-    /**
-     *
-     * @param inventory Video, Record Inventory
-     * @param video Video
-     * @return Return a command to check out video from inventory
-     */
-    public static Command newOutCmd(Inventory inventory, Video video) {
-        return new CmdOut((InventorySet) inventory, (VideoObj)video);
-    }
-
-    /**
-     *
-     * @param title Title of video
-     * @param year  Year Made
-     * @param director Director name
-     * @return Factory Method of Video Objects
-     */
-    public static Video newVideo(String title, int year, String director){
-        return new VideoObj(title, year, director);
-    }
-
-    public static void newUndoCmd(Inventory inventory){
-
-    }
-
-    public static void newRedoCmd(Inventory inventory){
-
-    }
-}
+  static public RerunnableCommand newRedoCmd(Inventory inventory) {
+      // get command history from inventory then redo.
+      return ((InventorySet)inventory).getHistory().getRedo();
+  }
+}  

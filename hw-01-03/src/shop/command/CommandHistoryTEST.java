@@ -10,15 +10,15 @@ public class CommandHistoryTEST extends TestCase {
 
   public void testEmptyExceptions() {
     CommandHistoryObj h = new CommandHistoryObj();
-    assertSame(null, h.topUndoCommand());
-    assertSame(null, h.topRedoCommand());
-    assertFalse(h.getUndo().run());
-    assertFalse(h.getRedo().run());
+    Assert.assertSame(null, h.topUndoCommand());
+    Assert.assertSame(null, h.topRedoCommand());
+    Assert.assertFalse(h.getUndo().run());
+    Assert.assertFalse(h.getRedo().run());
   }
 
   private void checkStacks(CommandHistoryObj h, UndoableCommand topUndo, UndoableCommand topRedo) {
-    assertSame(topUndo, h.topUndoCommand());
-    assertSame(topRedo, h.topRedoCommand());
+    Assert.assertSame(topUndo, h.topUndoCommand());
+    Assert.assertSame(topRedo, h.topRedoCommand());
   }
 
   public void testThatTopIsSetByAddUndoAndRedo() {
@@ -89,14 +89,14 @@ public class CommandHistoryTEST extends TestCase {
 
     _didRun = _didUndo = _didRedo = false;
     h.add(x);
-    assertTrue(!_didRun && !_didUndo && !_didRedo);
+    Assert.assertTrue(!_didRun && !_didUndo && !_didRedo);
 
     _didRun = _didUndo = _didRedo = false;
     h.getUndo().run();
-    assertTrue(!_didRun && _didUndo && !_didRedo);
+    Assert.assertTrue(!_didRun && _didUndo && !_didRedo);
 
     _didRun = _didUndo = _didRedo = false;
     h.getRedo().run();
-    assertTrue(!_didRun && !_didUndo && _didRedo);
+    Assert.assertTrue(!_didRun && !_didUndo && _didRedo);
   }
 }

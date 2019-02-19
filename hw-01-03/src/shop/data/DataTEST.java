@@ -59,7 +59,7 @@ public class DataTEST extends TestCase {
   public void testConstructorExceptionDirector() {
   }
 
-  public void testToString() { 
+  public void testToString() {
     String s = Data.newVideo("A",2000,"B").toString();
     Assert.assertEquals( s, "A (2000) : B" );
     s = Data.newVideo(" A ",2000," B ").toString();
