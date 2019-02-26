@@ -110,7 +110,6 @@ class Control {
     m.add("Check in a video",
       new UIMenuAction() {
         public void run() {
-          // TODO
           // GOAL: get video info from user. match video in inventory, check in command
           UIFormBuilder f = new UIFormBuilder();
           String[] result1 = _ui.processForm(_getVideoForm);
@@ -122,12 +121,14 @@ class Control {
             // find video in inventory, pull video info, then check in
             //_ui.displayMessage(video);
             for(Record r : _inventory){ // go through inventory to find video
-              if (r.video().title().equals(title) && r.video().year() == year && r.video().director() == director){ // match video with input
+              if (r.video().title().equals(title) && r.video().year() == year && r.video().director().equals(director)){ // match video with input
                 Command c = Data.newInCmd(_inventory, r.video());
                 if (! c.run()){ // run command, if it fails, output an error
                   _ui.displayError("Command failed");
                 }
-                _ui.displayMessage("Video checked in. Thank you!");
+                else {
+                  _ui.displayMessage("Video checked in. Thank you!");
+                }
                 break; // end loop to save on time
               }
             }
@@ -137,27 +138,28 @@ class Control {
     m.add("Check out a video",
       new UIMenuAction() {
         public void run() {
-          // TODO
           // check if there's videos in inventory, then check it out
-          System.out.println("check out initiated");
+          //System.out.println("check out initiated"); // for debugging
           UIFormBuilder f = new UIFormBuilder();
           String[] result1 = _ui.processForm(_getVideoForm);
           String title = result1[0], director = result1[2];
           int year = Integer.parseInt(result1[1]);
-          _ui.displayMessage(title + " " + year + " " + director );
+          //_ui.displayMessage(title + " " + year + " " + director ); // for debugging
 
           if (_inventory.size() <= 0){
             _ui.displayError("Inventory is empty at the moment");
           } else {
             // find video in inventory, pull video info, then check in
             for(Record r : _inventory){ // go through inventory to find video
-              if (r.video().title().equals(title) && r.video().year() == year && r.video().director() == director){ // match video with input
+              if (r.video().title().equals(title) && r.video().year() == year && r.video().director().equals(director)){ // match video with input
                 Command c = Data.newOutCmd(_inventory, r.video());
                 System.out.println("found");
                 if (! c.run()){ // run command, if it fails, output an error
                   _ui.displayError("Command failed");
                 }
-                _ui.displayMessage("Video checked out. Thank you!");
+                else {
+                  _ui.displayMessage("Video checked out. Thank you!");
+                }
                 break; // end loop to save on time
               }
             }
