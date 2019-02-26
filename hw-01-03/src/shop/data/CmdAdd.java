@@ -1,23 +1,40 @@
 package shop.data;
-import shop.command.Command;
 
-final class CmdAdd implements Command{
-    private InventorySet _inventory;
-    private VideoObj _video;
-    private int _change;
-    CmdAdd(InventorySet inventory, VideoObj video, int change){
-        _inventory = inventory;
-        _video = video;
-        _change = change;
-    }
+import shop.command.UndoableCommand;
 
-    @Override
-    public boolean run() {
-        try {
-            _inventory.addNumOwned(_video, _change);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
+/**
+ * Implementation of command to add or remove inventory.
+ * @see Data
+ */
+final class CmdAdd implements UndoableCommand {
+  private boolean _runOnce;
+  private InventorySet _inventory;
+  private Record _oldvalue;
+  private Video _video;
+  private int _change;
+  CmdAdd(InventorySet inventory, Video video, int change) {
+    _inventory = inventory;
+    _video = video;
+    _change = change;
+  }
+  public boolean run() {
+    if (_runOnce) // tracks if it ran before
+      return false;
+    _runOnce = true;
+    try {
+      _oldvalue = _inventory.addNumOwned(_video, _change);
+      _inventory.getHistory().add(this);
+      return true;
+    } catch (IllegalArgumentException e) {
+      return false;
+    } catch (ClassCastException e) {
+      return false;
     }
+  }
+  public void undo() {
+    _inventory.replaceEntry(_video,_oldvalue);
+  }
+  public void redo() {
+    _inventory.addNumOwned(_video, _change);
+  }
 }

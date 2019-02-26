@@ -1,19 +1,33 @@
 package shop.data;
-import shop.command.Command;
 
-final class CmdClear implements Command{
-    private InventorySet _inventory;
-    CmdClear(InventorySet inventory){
-        _inventory = inventory;
-    }
+import shop.command.UndoableCommand;
+import java.util.Map;
 
-    @Override
-    public boolean run() {
-        try{
-            _inventory.clear();
-            return true;
-        } catch (Exception e){
-            return false;
-        }
+/**
+ * Implementation of command to clear the inventory.
+ * @see Data
+ */
+final class CmdClear implements UndoableCommand {
+  private InventorySet _inventory;
+  private Map _oldvalue;
+  CmdClear(InventorySet inventory) {
+    _inventory = inventory;
+  }
+  public boolean run() {
+    if (_oldvalue != null)
+      return false;
+    try {
+      _oldvalue = _inventory.clear();
+      _inventory.getHistory().add(this); // add this command to history
+      return true;
+    } catch (ClassCastException e) {
+      return false;
     }
+  }
+  public void undo() {
+    _inventory.replaceMap(_oldvalue);
+  }
+  public void redo() {
+    _inventory.clear();
+  }
 }

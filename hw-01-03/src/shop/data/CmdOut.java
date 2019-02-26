@@ -1,21 +1,34 @@
 package shop.data;
-import shop.command.Command;
 
-final class CmdOut implements Command{
-    private InventorySet _inventory;
-    private VideoObj _video;
-    CmdOut(InventorySet inventory, VideoObj video){
-        _inventory = inventory;
-        _video = video;
-    }
+import shop.command.UndoableCommand;
 
-    @Override
-    public boolean run() {
-        try{
-            _inventory.checkOut(_video);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
+/**
+ * Implementation of command to check out a video.
+ * @see Data
+ */
+final class CmdOut implements UndoableCommand {
+  private InventorySet _inventory;
+  private Video _video;
+  private Record _oldvalue;
+  CmdOut(InventorySet inventory, Video video) {
+    _inventory = inventory;
+    _video = video;
+  }
+  public boolean run() {
+      try {
+          _oldvalue = _inventory.checkOut(_video);
+          _inventory.getHistory().add(this);
+          return true;
+      } catch (IllegalArgumentException e) {
+          return false;
+      } catch (ClassCastException e) {
+          return false;
+      }
+  }
+  public void undo() {
+      _inventory.replaceEntry(_video, _oldvalue);
+  }
+  public void redo() {
+    _inventory.checkOut(_video);
+  }
 }

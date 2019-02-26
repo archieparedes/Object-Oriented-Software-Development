@@ -17,15 +17,18 @@ public interface CommandHistory {
    * Returns a <code>RerunnableCommand</code> that, when run does the following:
    * Pop command from <code>undoable</code>, undo it, then push it
    * onto <code>redoable</code>.
-   * @throws EmptyStackException if there is no undoable command.
+   * throws EmptyStackException if there is no undoable command.
+   * @return undo
    */
   public RerunnableCommand getUndo();
 
   /**
-   * Returns a <code>RerunnableCommand</code> that, when run does the following:
+   * returns a <code>RerunnableCommand</code> that, when run does the following:
    * Pop command from <code>redoable</code>, redo it, then push it
    * onto <code>undoable</code>.
-   * @throws EmptyStackException if there is no redoable command.
+   * throws EmptyStackException if there is no redoable command.
+   * @return undo
    */
+
   public RerunnableCommand getRedo();
 }

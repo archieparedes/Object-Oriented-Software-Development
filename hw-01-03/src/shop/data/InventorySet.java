@@ -1,255 +1,248 @@
 package shop.data;
-import com.sun.prism.impl.Disposer;
+
 import java.util.*;
 
+import shop.command.Command;
+import shop.command.UndoableCommand;
+import shop.command.CommandHistory;
+import shop.command.CommandHistoryFactory;
 
 /**
- * @author Archie_Paredes
- * An Inventory implemented using a <code>HashMap&lt;Video,Record&gt;</code>.
- * Keys are Videos; Values are Records.
- *
- * @objecttype Mutable Collection of Records
- * @objectinvariant
- *   Every key and value in the map is non-<code>null</code>.
- * @objectinvariant
- *   Each value <code>r</code> is stored under key <code>r.video</code>.
- *
+ * Implementation of Inventory interface.
+ * @see Data
  */
+final class InventorySet implements Inventory {
+  private Map<Video,Record> _data;
+  private final CommandHistory _history;
 
-final class InventorySet implements Inventory{
-    /** @invariant <code>_data != null</code> */
-    private final Map<Video, Record> _data;
+  InventorySet() {
+    _data = new HashMap<Video,Record>();
+    _history = CommandHistoryFactory.newCommandHistory();
+  }
 
-    InventorySet() {
-        _data = new HashMap<Video, Record>();
+  /**
+   * If record is null, then delete record for video;
+   * otherwise replace record for video.
+   * @param record Record
+   * @param video video
+   */
+  void replaceEntry(Video video, Record record) {
+    _data.remove(video);
+    if (record != null)
+      _data.put(video,((RecordObj)record).copy());
+  }
+
+  /**
+   * Overwrite the map.
+   * @param data hashmap
+   *
+   */
+  void replaceMap(Map<Video,Record> data) {
+    _data = data;
+  }
+
+  /**
+   *
+   * @return size of hashmap _data
+   */
+  public int size() {
+    return _data.size();
+  }
+
+  /**
+   *
+   * @param v video
+   * @return Record from video
+   */
+  public Record get(Video v) {
+    if(_data.containsKey(v)){
+      return _data.get(v);
+    } else {
+      return null;
     }
+  }
 
-    /**
-     * @Return the number of Records.
-     */
-    public int size() {
-        int size = 0;
-        for (Record r : _data.values()){
-            if(r != null) size++; // if there's a record, add 1 to size
-        }
-        return size;
+  /**
+   *
+   * @return Unmodifiable collection
+   */
+  public Iterator<Record> iterator() {
+    return Collections.unmodifiableCollection(_data.values()).iterator();
+  }
+
+  /**
+   *
+   * @param comparator determines the order of the records returned.
+   * @return Unmodifiable collection sorted according to comparator
+   */
+  public Iterator<Record> iterator(Comparator<Record> comparator) {
+    ArrayList<Record> Record_Collection = new ArrayList<>(); // Array List of records
+    for (Record r : _data.values()){
+      Record_Collection.add(r); // acquires copies only
     }
+    Record_Collection.sort(comparator);
+    return Collections.unmodifiableCollection(Record_Collection).iterator();
+  }
 
-    /**
-     * @Return a copy of the record for a given Video.
-     */
-    public Record get(Video v) {
-        if(_data.containsKey(v)){
-            return _data.get(v);
-        } else {
-            return null;
-        }
+  /**
+   * Add or remove copies of a video from the inventory.
+   * If a video record is not already present (and change is
+   * positive), a record is created. 
+   * If a record is already present, numOwned is
+   * modified using change
+   * If change brings the number of copies to be less
+   * than one, the record is removed from the inventory.
+   * @param video the video to be added.
+   * @param change the number of copies to add (or remove if negative).
+   * @return A copy of the previous record for this video (if any)
+   * @throws IllegalArgumentException if video null or change is zero
+   */
+  Record addNumOwned(Video video, int change) {
+    if (video == null || change == 0) {
+      throw new IllegalArgumentException();
+      }
+
+    RecordObj r = (RecordObj) _data.get(video);
+    if (r == null && change < 1) {
+      throw new IllegalArgumentException();
+    } else if (r == null) {
+      _data.put(video, new RecordObj(video, change, 0, 0));
+    } else if (r.numOwned+change < r.numOut) {
+      throw new IllegalArgumentException();
+    } else if (r.numOwned+change < 1) {
+      _data.remove(video);
+    } else {
+      _data.put(video, new RecordObj(video, r.numOwned + change, r.numOut, r.numRentals));
     }
+    return r;
 
-    /**
-     * @Return an iterator over Records in the Inventory
-     * Neither the underlying collection, nor the actual records are returned.
-     */
-    public Iterator<Record> iterator() {
-        Collection a = Collections.unmodifiableCollection(_data.values());
-        return a.iterator();
+  }
+
+  /**
+   * Check out a video.
+   * @param video the video to be checked out.
+   * @return A copy of the previous record for this video
+   * @throws IllegalArgumentException if video has no record or numOut
+   * equals numOwned.
+   */
+  Record checkOut(Video video) {
+      RecordObj rec = (RecordObj) _data.get(video);
+      if(!_data.containsKey(video)  || rec.numOut == rec.numOwned){
+          throw new IllegalArgumentException("Record does not exist or inventory is rented out.");
+      } else {
+//          rec.numOut++; // amount of videos currently out increases
+//          rec.numRentals++; // amount of rentals increase
+        RecordObj old = new RecordObj(video, rec.numOwned(), rec.numOut()+1 ,rec.numRentals()+1);
+        replaceEntry(video, old);
+      }
+      return rec.copy();
+  }
+  
+  /**
+   * Check in a video.
+   * @param video the video to be checked in.
+   * @return A copy of the previous record for this video
+   * @throws IllegalArgumentException if video has no record or numOut
+   * non-positive.
+   */
+  Record checkIn(Video video) {
+      RecordObj rec = (RecordObj) _data.get(video);
+      if(!_data.containsKey(video) || rec.numOut <= 0){
+          throw new IllegalArgumentException("Record does not exists or there are no videos checked out.");
+      } else {
+//          rec.numOut--; // amount of videos currently out decreases
+//          // rental amount stays the same
+        RecordObj old = new RecordObj(video, rec.numOwned(), rec.numOut()-1 ,rec.numRentals());
+        replaceEntry(video, old);
+      }
+      return rec.copy();
+  }
+  
+  /**
+   * Remove all records from the inventory.
+   * @return A copy of the previous inventory as a Map
+   */
+  Map clear() {
+      Map<Video,Record> oldData = new HashMap<>(); // holds previous data
+      oldData.putAll(_data);
+      _data.clear();
+      return oldData;
+  }
+
+  /**
+   * @return a reference to the history.
+   */
+  CommandHistory getHistory() {
+    return _history;
+  }
+  
+  public String toString() {
+    StringBuffer buffer = new StringBuffer();
+    buffer.append("Database:\n");
+    Iterator i = _data.values().iterator();
+    while (i.hasNext()) {
+      buffer.append("  ");
+      buffer.append(i.next());
+      buffer.append("\n");
     }
+    return buffer.toString();
+  }
 
-    /**
-     *
-     * @param comparator
-     * @return Returns an iterator over the inventory, sorted according the comparatror
-     */
-    public Iterator<Record> iterator(Comparator<Record> comparator) {
-        // Recall that an ArrayList is a Collection.
-        ArrayList<Record> Record_Collection = new ArrayList<>(); // Array List of records
-        for (Record r : _data.values()){
-            Record_Collection.add(r); // acquires copies only
-        }
-        Record_Collection.sort(comparator);
-        return Record_Collection.iterator();
+
+  /**
+   * Implementation of Record interface.
+   *
+   * This is a utility class for Inventory.  Fields are mutable and
+   * package-private.
+   *
+   * Class Invariant: No two instances may reference the same Video.
+   *
+   * @see Record
+   */
+  private static final class RecordObj implements Record {
+    Video video; // the video
+    int numOwned;   // copies owned
+    int numOut;     // copies currently rented
+    int numRentals; // total times video has been rented
+    
+    RecordObj(Video video, int numOwned, int numOut, int numRentals) {
+      this.video = video;
+      this.numOwned = numOwned;
+      this.numOut = numOut;
+      this.numRentals = numRentals;
     }
-
-    /**
-     * Add or remove copies of a video from the inventory.
-     * If a video record is not already present (and change is
-     * positive), a record is created.
-     * If a record is already present, <code>numOwned</code> is
-     * modified using <code>change</code>.
-     * If <code>change</code> brings the number of copies to be less
-     * than one, the record is removed from the inventory.
-     * @param video the video to be added.
-     * @param change the number of copies to add (or remove if negative).
-     * @throws IllegalArgumentException if video null or change is zero
-     * @postcondition changes the record for the video
-     */
-    void addNumOwned(Video video, int change) {
-        if(video == null || change == 0)   throw new IllegalArgumentException("Invalid parameters");
-        Record newRecord;
-        RecordObj oldRecord = (RecordObj) _data.get(video);
-
-        if(!_data.containsKey(video) && change > 0){ // if record doesn't exists and change is positive, create new record if change > 0
-            newRecord = new RecordObj(video, change, 0, 0);
-            _data.put(video, newRecord);
-            return;
-        }
-        else if(_data.containsKey(video) && change >= 1) { // if the record is present and change >= 1, update record
-            newRecord = new RecordObj(video, oldRecord.numOwned += change, oldRecord.numOut, oldRecord.numRentals);
-            _data.replace(video, _data.get(video), newRecord); // numOwned is modified
-            return;
-        }
-        else if (_data.containsKey(video) && change < 1){
-            if (oldRecord.numOwned + change < oldRecord.numOut) throw new IllegalArgumentException("Videos are rented out"); // can't remove if videos are out
-            if(oldRecord.numOwned + change <= 0){
-                _data.remove(video);
-            }
-            newRecord = new RecordObj(video, oldRecord.numOwned += change, oldRecord.numOut, oldRecord.numRentals);
-            _data.replace(video, oldRecord, newRecord);
-            return;
-        }
-        else if(!_data.containsKey(video) && change < 1){
-            throw new IllegalArgumentException("Video doesn't exist and change is less than 1");
-        }
+    RecordObj copy() {
+      return new RecordObj(video, numOwned, numOut, numRentals);
     }
-
-    /**
-     * Check out a video.
-     * @param video the video to be checked out.
-     * @throws IllegalArgumentException if video has no record or numOut
-     * equals numOwned.
-     * @postcondition changes the record for the video
-     */
-    void checkOut(Video video) {
-        RecordObj rec = (RecordObj) _data.get(video);
-        if(!_data.containsKey(video)  || rec.numOut == rec.numOwned){
-            throw new IllegalArgumentException("Record does not exist or inventory is rented out.");
-        } else {
-            rec.numOut++; // amount of videos currently out increases
-            rec.numRentals++; // amount of rentals increase
-        }
+    public Video video() {
+      return video;
     }
-
-    /**
-     * Check in a video.
-     * @param video the video to be checked in.
-     * @throws IllegalArgumentException if video has no record or numOut
-     * non-positive.
-     * @postcondition changes the record for the video
-     */
-    void checkIn(Video video) {
-        RecordObj rec = (RecordObj) _data.get(video);
-        if(!_data.containsKey(video) || rec.numOut <= 0){
-            throw new IllegalArgumentException("Record does not exists or there are no videos checked out.");
-        } else {
-            rec.numOut--; // amount of videos currently out decreases
-            // rental amount stays the same
-        }
+    public int numOwned() {
+      return numOwned;
     }
-
-    /**
-     * Remove all records from the inventory.
-     * @throw IllegalArgumentException if there is nothing to clear or Videos are rented out
-     * @postcondition <code>size() == 0</code>
-     */
-
-    void clear() {
-        // iterate through _data first to check if any are rented out. If there are, throw error
-//        RecordObj rec;
-//        for(Video v : _data.keySet()){
-//            rec = (RecordObj) _data.get(v);
-//            //assert(rec.numOut == 0);
-//            if(rec.numOut > 0)  throw new IllegalArgumentException("Videos are rented out");
-//        }
-//        if(size() <= 0){
-//            throw new IllegalArgumentException("Nothing to clear");
-//        }
-        _data.clear();
-        assert(size() == 0);
+    public int numOut() {
+      return numOut;
     }
-
-    /**
-     * @Return the contents of the inventory as a string.
-     */
+    public int numRentals() {
+      return numRentals;
+    }
+    public boolean equals(Object thatObject) {
+      return video.equals(((Record)thatObject).video());
+    }
+    public int hashCode() {
+      return video.hashCode();
+    }
     public String toString() {
-        StringBuffer buffer = new StringBuffer();
-        buffer.append("Database:\n");
-        for (Record r : _data.values()) {
-            buffer.append("  ");
-            buffer.append(r);
-            buffer.append("\n");
-        }
-        return buffer.toString();
+      StringBuffer buffer = new StringBuffer();
+      buffer.append(video);
+      buffer.append(" [");
+      buffer.append(numOwned);
+      buffer.append(",");
+      buffer.append(numOut);
+      buffer.append(",");
+      buffer.append(numRentals);
+      buffer.append("]");
+      return buffer.toString();
     }
-
-    ////////////////////////Record////////////////////////////////
-    private static final class RecordObj implements Record {
-        /**
-         * The video.
-         * @invariant <code>video != null</code>
-         */
-        Video video;
-        /**
-         * The number of copies of the video that are in the inventory.
-         * @invariant <code>numOwned > 0</code>
-         */
-        int numOwned;
-        /**
-         * The number of copies of the video that are currently checked out.
-         * @invariant <code>numOut <= numOwned</code>
-         */
-        int numOut;
-        /**
-         * The total number of times this video has ever been checked out.
-         * @invariant <code>numRentals >= numOut</code>
-         */
-        int numRentals;
-
-        public Video video() {
-            return video;
-        }
-        public int numOwned() {
-            return numOwned;
-        }
-        public int numOut() {
-            return numOut;
-        }
-        public int numRentals() {
-            return numRentals;
-        }
-
-        /**
-         * Initialize all object attributes.
-         */
-        RecordObj(Video video, int numOwned, int numOut, int numRentals) {
-            this.video = video;
-            this.numOwned = numOwned;
-            this.numOut = numOut;
-            this.numRentals = numRentals;
-        }
-        /**
-         * Return a shallow copy of this record.
-         */
-        public RecordObj copy() {
-            return new RecordObj(video,numOwned,numOut,numRentals);
-        }
-        /**
-         * Return a string representation of the object in the following format:
-         * <code>"video [numOwned,numOut,numRentals]"</code>.
-         */
-        public String toString() {
-            StringBuffer buffer = new StringBuffer();
-            buffer.append(video);
-            buffer.append(" [");
-            buffer.append(numOwned);
-            buffer.append(",");
-            buffer.append(numOut);
-            buffer.append(",");
-            buffer.append(numRentals);
-            buffer.append("]");
-            return buffer.toString();
-        }
-    }
+  }
 }
-
-
-

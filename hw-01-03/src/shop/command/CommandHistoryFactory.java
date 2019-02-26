@@ -2,8 +2,13 @@ package shop.command;
 
 public class CommandHistoryFactory {
   private CommandHistoryFactory() {}
+
+  /**
+   *
+   * @return commandHistoryObj is returned
+   */
   static public CommandHistory newCommandHistory() {
-    // TODO  
-    return null;
+    CommandHistory ch = new CommandHistoryObj();
+    return ch;
   }
 }

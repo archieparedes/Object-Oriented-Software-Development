@@ -2,6 +2,7 @@ package shop.main;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
+import org.junit.Test;
 import shop.command.Command;
 import shop.data.Data;
 import shop.data.Record;
@@ -9,11 +10,6 @@ import shop.data.Video;
 import shop.data.Inventory;
 import java.util.Iterator;
 
-// TODO:
-// write an integration test that tests the data classes.
-// add in some videos, check out, check in, delete videos, etc.
-// check that errors are reported when necessary.
-// check that things are going as expected.
 public class TEST1 extends TestCase {
   private Inventory _inventory = Data.newInventory();
   public TEST1(String name) {
@@ -25,6 +21,8 @@ public class TEST1 extends TestCase {
   private void expect(Record r, String s) {
     assertEquals(s,r.toString());
   }
+
+  @Test
   public void test1() {
     Command clearCmd = Data.newClearCmd(_inventory);
     clearCmd.run();
@@ -80,4 +78,6 @@ public class TEST1 extends TestCase {
     expect(it.next(),"Title2 (2001) : Director2 [5,0,0]");
     assertFalse(it.hasNext());
   }
+
+
 }

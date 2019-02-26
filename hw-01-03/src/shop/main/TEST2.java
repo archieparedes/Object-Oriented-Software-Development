@@ -2,6 +2,7 @@ package shop.main;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
+import org.junit.Test;
 import shop.command.RerunnableCommand;
 import shop.command.UndoableCommand;
 import shop.data.Data;
@@ -13,6 +14,7 @@ public class TEST2 extends TestCase {
   public TEST2(String name) {
     super(name);
   }
+  @Test
   public void test1() {
     final Inventory inventory = Data.newInventory();
     final Video v1 = Data.newVideo("K", 2003, "S");
@@ -96,7 +98,7 @@ public class TEST2 extends TestCase {
     assertTrue  ( REDO.run() );
     assertEquals( 0, inventory.size() );
   }
-
+  @Test
   public void test2() {
     final Inventory inventory = Data.newInventory();
     final Video v1 = Data.newVideo("K", 2003, "S");
@@ -117,4 +119,6 @@ public class TEST2 extends TestCase {
     assertTrue  ( UNDO.run() );
     assertEquals( "K (2003) : S [2,0,0]", inventory.get(v1).toString() );
   }
+  private Inventory _inventory = Data.newInventory();
+
 }

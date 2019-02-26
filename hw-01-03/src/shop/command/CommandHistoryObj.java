@@ -9,7 +9,9 @@ final class CommandHistoryObj implements CommandHistory {
         boolean result = !_undoStack.empty();
         if (result) {
           // Undo
-          // TODO  
+          UndoableCommand u = _undoStack.pop(); // remove from undo stack
+          u.undo();
+          _redoStack.push(u); // put it in redo to reverse u command
         }
         return result;
       }
@@ -19,14 +21,17 @@ final class CommandHistoryObj implements CommandHistory {
         boolean result = !_redoStack.empty();
         if (result) {
           // Redo
-          // TODO  
+          UndoableCommand r = _redoStack.pop(); // remove from redo and grab the command
+          r.redo();
+          _undoStack.push(r); // put it in undo to reverse r command
         }
         return result;
       }
     };
 
   public void add(UndoableCommand cmd) {
-    // TODO  
+    _undoStack.push(cmd); // add to undo stack
+    _redoStack.clear(); // clear redo, you cant redo a recently added
   }
   
   public RerunnableCommand getUndo() {
