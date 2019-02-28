@@ -96,43 +96,48 @@ class Control {
       new UIMenuAction() {
         public void run() {
           String[] result1 = _ui.processForm(_getVideoForm);
+          if (result1[0] == null || result1[1] == null || result1[2] == null){
+            return;
+          }
           Video v = Data.newVideo(result1[0], Integer.parseInt(result1[1]), result1[2]); // title, year, director
           UIFormBuilder f = new UIFormBuilder();
+
           f.add("Number of copies to add/remove", _numberTest);
           String[] result2 = _ui.processForm(f.toUIForm(""));
                                              
           Command c = Data.newAddCmd(_inventory, v, Integer.parseInt(result2[0]));
-          if (! c.run()) {
-            _ui.displayError("Command failed");
-          }
+          if (! c.run())  _ui.displayError("Command failed");
         }
       });
     m.add("Check in a video",
       new UIMenuAction() {
         public void run() {
           // GOAL: get video info from user. match video in inventory, check in command
-          UIFormBuilder f = new UIFormBuilder();
-          String[] result1 = _ui.processForm(_getVideoForm);
-          String title = result1[0], director = result1[2];
-          int year = Integer.parseInt(result1[1]);
-          if (_inventory.size() <= 0){
+          if (_inventory.size() <= 0) {
             _ui.displayError("Inventory is empty at the moment");
-          } else {
-            // find video in inventory, pull video info, then check in
-            //_ui.displayMessage(video);
-            for(Record r : _inventory){ // go through inventory to find video
-              if (r.video().title().equals(title) && r.video().year() == year && r.video().director().equals(director)){ // match video with input
-                Command c = Data.newInCmd(_inventory, r.video());
-                if (! c.run()){ // run command, if it fails, output an error
-                  _ui.displayError("Command failed");
-                }
-                else {
-                  _ui.displayMessage("Video checked in. Thank you!");
-                }
-                break; // end loop to save on time
-              }
-            }
+            return;
           }
+          String[] result1 = _ui.processForm(_getVideoForm);
+          if (result1[0] == null || result1[1] == null || result1[2] == null){
+            return;
+          }
+          Video v = null;
+          try{
+              int year = Integer.parseInt(result1[1]);
+          } catch (Exception e){
+              _ui.displayError("Year is not an integer");
+              return;
+          }
+          v = Data.newVideo(result1[0], Integer.parseInt(result1[1]), result1[2]);
+
+
+          // find video in inventory, pull video info, then check in
+          //_ui.displayMessage(video);
+          Command c = Data.newInCmd(_inventory,v);
+          if (! c.run())  _ui.displayError("Command failed"); // run command, if it fails, output an error
+          else  _ui.displayMessage("Video checked in. Thank you!");
+
+
         }
       });
     m.add("Check out a video",
@@ -140,30 +145,29 @@ class Control {
         public void run() {
           // check if there's videos in inventory, then check it out
           //System.out.println("check out initiated"); // for debugging
-          UIFormBuilder f = new UIFormBuilder();
-          String[] result1 = _ui.processForm(_getVideoForm);
-          String title = result1[0], director = result1[2];
-          int year = Integer.parseInt(result1[1]);
-          //_ui.displayMessage(title + " " + year + " " + director ); // for debugging
-
-          if (_inventory.size() <= 0){
+          if (_inventory.size() <= 0) {
             _ui.displayError("Inventory is empty at the moment");
-          } else {
-            // find video in inventory, pull video info, then check in
-            for(Record r : _inventory){ // go through inventory to find video
-              if (r.video().title().equals(title) && r.video().year() == year && r.video().director().equals(director)){ // match video with input
-                Command c = Data.newOutCmd(_inventory, r.video());
-                System.out.println("found");
-                if (! c.run()){ // run command, if it fails, output an error
-                  _ui.displayError("Command failed");
-                }
-                else {
-                  _ui.displayMessage("Video checked out. Thank you!");
-                }
-                break; // end loop to save on time
-              }
-            }
+            return;
           }
+          String[] result1 = _ui.processForm(_getVideoForm);
+          if (result1[0] == null || result1[1] == null || result1[2] == null){
+            return;
+          }
+
+          try{
+            int year = Integer.parseInt(result1[1]);
+          } catch (Exception e){
+            _ui.displayError("Year is not an integer");
+            return;
+          }
+
+          Video v = Data.newVideo(result1[0], Integer.parseInt(result1[1]), result1[2]);
+
+            // find video in inventory, pull video info, then check in
+          Command c = Data.newOutCmd(_inventory,v);
+          if (! c.run())  _ui.displayError("Command failed"); // run command, if it fails, output an error
+          else  _ui.displayMessage("Video checked out. Thank you!");
+
         }
       });
     m.add("Print the inventory",
@@ -201,7 +205,6 @@ class Control {
         public void run() {
           // DONE **
           // Goal: sort out according to numRentals, output highest to lowest numRental amount, if not enough videos, output blanks. output as _ui.displayMessage
-          UIFormBuilder f = new UIFormBuilder();
           // use comparator
           Comparator<Record> top10 = new Comparator<Record>() { // sorts from largest to smallest
             @Override
@@ -220,7 +223,8 @@ class Control {
                 vidName = "";
               } else {
                 Record r = sortedInv.next(); // pull the record
-                vidName = r.video().toString(); // pull video, then get String of video
+
+                vidName = r.toString(); // pull video, then get String of video
               }
               message += i + ".)  " + vidName + " \n";
               i++;

@@ -1,5 +1,6 @@
 package shop.ui;
 
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -60,7 +61,15 @@ final class TextUI implements UI {
     String[] pF = new String[form.size()];
     for(int i = 0; i < pF.length; i++){
       System.out.println(form.getPrompt(i));
-      pF[i] = getResponse();
+      String j = getResponse();
+
+      if(form.checkInput(i, j) == true){
+        pF[i] = j;
+      } else {
+        System.out.println("Please re-enter year.");
+        i-=1;
+      }
+
     }
     return pF;
   }

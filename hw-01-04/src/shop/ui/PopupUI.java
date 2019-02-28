@@ -1,6 +1,8 @@
 package shop.ui;
 
-import javax.swing.JOptionPane;
+import sun.reflect.annotation.ExceptionProxy;
+
+import javax.swing.*;
 //import java.io.IOException;
 
 final class PopupUI implements UI {
@@ -41,9 +43,24 @@ final class PopupUI implements UI {
 
   public String[] processForm(UIForm form) {
     String[] pF = new String[form.size()];
-    for(int i = 0; i < pF.length; i++){
-      pF[i] = JOptionPane.showInputDialog(form.getPrompt(i));
+    int i = 0;
+    UIMenuBuilder menuBuilder = new UIMenuBuilder();
+    String j;
+    JFrame jf = new JFrame();
+    while(i < pF.length){
+      j = JOptionPane.showInputDialog(form.getPrompt(i));
+      if(j == null){
+        break;
+      }
+      if (form.checkInput(i, j) == true){
+        pF[i] = j;
+      } else {
+        displayError("Invalid input. Try again.");
+        i--;
+      }
+      i++;
     }
+
     return pF;
   }
 }
