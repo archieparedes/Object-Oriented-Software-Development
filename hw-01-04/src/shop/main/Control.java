@@ -104,6 +104,7 @@ class Control {
 
           f.add("Number of copies to add/remove", _numberTest);
           String[] result2 = _ui.processForm(f.toUIForm(""));
+          if(result2[0] == null) return;
                                              
           Command c = Data.newAddCmd(_inventory, v, Integer.parseInt(result2[0]));
           if (! c.run())  _ui.displayError("Command failed");
