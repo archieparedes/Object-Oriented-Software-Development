@@ -1,6 +1,6 @@
 package shop.command;
 
-public class CommandHistoryFactory {
+final public class CommandHistoryFactory {
   private CommandHistoryFactory() {}
 
   /**

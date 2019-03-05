@@ -3,7 +3,7 @@ package shop.command;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
-public class CommandHistoryTEST extends TestCase {
+final public class CommandHistoryTEST extends TestCase {
   public CommandHistoryTEST(String name) {
     super(name);
   }
