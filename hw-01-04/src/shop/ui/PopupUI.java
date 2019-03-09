@@ -16,7 +16,7 @@ final class PopupUI implements UI {
     JOptionPane.showMessageDialog(null,message,"Error",JOptionPane.ERROR_MESSAGE);
   }
 
-  public void processMenu(UIMenu menu) {
+  public void processMenu(UIFormMenu menu) {
     StringBuffer b = new StringBuffer();
     b.append(menu.getHeading());
     b.append("\n");
@@ -41,7 +41,7 @@ final class PopupUI implements UI {
     menu.runAction(selection);
   }
 
-  public String[] processForm(UIForm form) {
+  public String[] processForm(UIFormMenu form) {
     String[] pF = new String[form.size()];
     int i = 0;
     UIMenuBuilder menuBuilder = new UIMenuBuilder();

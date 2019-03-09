@@ -1,6 +1,6 @@
 package shop.ui;
 
-public class UIFactory {
+final public class UIFactory {
   private UIFactory() {}
   static private UI _UI = new PopupUI();
   //static private UI _UI = new TextUI();

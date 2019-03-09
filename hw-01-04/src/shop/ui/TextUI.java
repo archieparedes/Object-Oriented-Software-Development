@@ -36,7 +36,7 @@ final class TextUI implements UI {
     return result;
   }
 
-  public void processMenu(UIMenu menu) {
+  public void processMenu(UIFormMenu menu) {
     _out.println(menu.getHeading());
     _out.println("Enter choice by number:");
 
@@ -57,7 +57,7 @@ final class TextUI implements UI {
     menu.runAction(selection);
   }
 
-  public String[] processForm(UIForm form) {
+  public String[] processForm(UIFormMenu form) {
     String[] pF = new String[form.size()];
     for(int i = 0; i < pF.length; i++){
       System.out.println(form.getPrompt(i));
