@@ -3,6 +3,7 @@ package shop.main;
 import shop.ui.*;
 import shop.data.Inventory;
 import shop.main.ControlEnumState.INIT;
+
 // unused imports
 //import shop.data.Data;
 //import shop.data.Video;
@@ -11,22 +12,24 @@ import shop.main.ControlEnumState.INIT;
 //import java.util.Iterator;
 //import java.util.Comparator;
 
-final class Control {
+final class Control{
   StatesEnum states;
   UIFormTest_v2 UIFormTests;
-  private UIFormMenu[] _menus;
+  private UI_FM_Interface[] _menus;
   private int _state;
-  private UIFormMenu _getVideoForm;
+  private UI_FM_Interface _getVideoForm;
   private UIFormTest _numberTest, _stringTest;
   private Inventory _inventory;
   private UI _ui;
   private INIT uiAct;
+  private static SuperUIFactory SuperUI = new SuperUIFactory();
+
 
   Control(Inventory inventory, UI ui) {
     _inventory = inventory;
     _ui = ui;
 
-    _menus = new UIFormMenu[states.NUMSTATES.get()];
+    _menus = new UI_FM_Interface[states.NUMSTATES.get()];
     _state = states.START.get();
     addSTART(states.START.get());
     addEXIT(states.EXIT.get());
@@ -35,11 +38,11 @@ final class Control {
     _numberTest = UIFormTests.NUMBERTEST.go();
     _stringTest = UIFormTests.STRINGTEST.go();
 
-    UIFormBuilder f = new UIFormBuilder();
+    FormBuilder f = (FormBuilder)SuperUI.launch("UIFB",null,null); //new UIFormBuilder();
     f.add("Title", _stringTest);
     f.add("Year", yearTest);
     f.add("Director", _stringTest);
-    _getVideoForm = f.toUIForm("Enter Video");
+    _getVideoForm =  f.toUIForm("Enter Video");
     uiAct = new INIT(_ui, _inventory, _getVideoForm, _numberTest);
   }
   
@@ -54,7 +57,7 @@ final class Control {
   }
   
   private void addSTART(int stateNum) {
-    UIMenuBuilder m = new UIMenuBuilder();
+    MenuBuilder m = (MenuBuilder)SuperUI.launch("UIMB",null,null); //new UIMenuBuilder();
     
     m.add("Default",ControlEnumState.DEFAULT.go());
     m.add("Add/Remove copies of a video", ControlEnumState.ADD_REMOVE.go());
@@ -74,8 +77,8 @@ final class Control {
     _menus[stateNum] = m.toUIMenu("Bob's Video");
   }
   private void addEXIT(int stateNum) {
-    UIMenuBuilder m = new UIMenuBuilder();
-    
+    MenuBuilder m = (MenuBuilder)SuperUI.launch("UIMB",null,null); //new UIMenuBuilder();
+
     m.add("Default", ControlEnumState.DEFAULT.go());
     m.add("Yes",
       new UIMenuAction() {

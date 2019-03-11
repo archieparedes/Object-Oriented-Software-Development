@@ -2,83 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1323bfee-1cad-4d6e-ac17-7c52d666c979" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/shop/main/CTRLState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shop/main/ControlEnumState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shop/main/ControlState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shop/main/StatesEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shop/ui/SuperUIFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shop/ui/UIFormMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shop/ui/UIFormTest_v2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shop/ui/UI_FM_Interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw-01-03/src/shop/data/CmdAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw-01-03/src/shop/data/CmdAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw-01-03/src/shop/data/CmdClear.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw-01-03/src/shop/data/CmdClear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw-01-03/src/shop/data/CmdIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw-01-03/src/shop/data/CmdIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw-01-03/src/shop/data/CmdOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw-01-03/src/shop/data/CmdOut.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw-01-03/src/shop/data/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw-01-03/src/shop/data/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw-01-03/src/shop/data/DataTEST.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw-01-03/src/shop/data/DataTEST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw-01-03/src/shop/data/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw-01-03/src/shop/data/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw-01-03/src/shop/data/InventorySet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw-01-03/src/shop/data/InventorySet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw-01-03/src/shop/data/InventoryTEST.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw-01-03/src/shop/data/InventoryTEST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw-01-03/src/shop/data/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw-01-03/src/shop/data/Record.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw-01-03/src/shop/data/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw-01-03/src/shop/data/Video.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw-01-03/src/shop/data/VideoObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw-01-03/src/shop/data/VideoObj.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw-01-03/src/shop/data/VideoTEST.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw-01-03/src/shop/data/VideoTEST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shop/ui/FormBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shop/ui/MenuBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shop/ui/SuperUIInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/data/CmdRedo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/data/CmdUndo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/data/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/data/Data.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/data/InventorySet$RecordObj.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/data/InventorySet$RecordObj.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/data/InventorySet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/data/InventorySet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$12$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$13.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$14.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$15.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$16.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$17.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control$9.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/main/Control.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/PopupUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/PopupUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/TextUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/TextUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIForm$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIForm$Pair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIForm$Pair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIForm.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIFormBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIFormBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIMenu$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIMenu$Pair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIMenu$Pair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIMenu.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIMenuBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw-01-04/shop/ui/UIMenuBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/data/CmdAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/data/CmdAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/data/CmdClear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/data/CmdClear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/data/CmdIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/data/CmdIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/data/CmdOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/data/CmdOut.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/data/CmdRedo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/data/CmdUndo.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shop/data/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/data/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/data/DataTEST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/data/DataTEST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/data/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/data/Inventory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shop/data/InventorySet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/data/InventorySet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/data/InventoryTEST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/data/InventoryTEST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/data/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/data/Record.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/data/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/data/Video.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/data/VideoObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/data/VideoObj.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/data/VideoTEST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/data/VideoTEST.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shop/main/Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/main/Control.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shop/main/ControlEnumState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/main/ControlEnumState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shop/main/StatesEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/main/StatesEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shop/ui/PopupUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/ui/PopupUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shop/ui/SuperUIFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/ui/SuperUIFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shop/ui/TextUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/ui/TextUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shop/ui/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/ui/UI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shop/ui/UIFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/ui/UIFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/ui/UIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/ui/UIForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shop/ui/UIFormBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/ui/UIFormBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/ui/UIMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/ui/UIMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shop/ui/UIFormMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/ui/UIFormMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shop/ui/UIMenuBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/ui/UIMenuBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shop/ui/UI_FM_Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/ui/UI_FM_Interface.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,25 +46,18 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="hw-01-04" />
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/shop/ui/SuperUIFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -129,6 +81,9 @@
       <find>UIFo</find>
       <find>UIMenuActionEnumConstructor</find>
       <find>clear</find>
+      <find>UIFormMe</find>
+      <find>addE</find>
+      <find>intern</find>
     </findStrings>
     <replaceStrings>
       <replace>run</replace>
@@ -145,25 +100,32 @@
       <list>
         <option value="$PROJECT_DIR$/src/shop/command/CommandHistoryFactory.java" />
         <option value="$PROJECT_DIR$/src/shop/command/CommandHistoryTEST.java" />
-        <option value="$PROJECT_DIR$/src/shop/ui/UIFactory.java" />
         <option value="$PROJECT_DIR$/src/shop/main/ControlState.java" />
         <option value="$PROJECT_DIR$/src/shop/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/shop/ui/UI_FM_Interface.java" />
         <option value="$PROJECT_DIR$/src/shop/main/ControlEnumObj.java" />
-        <option value="$PROJECT_DIR$/src/shop/ui/TextUI.java" />
-        <option value="$PROJECT_DIR$/src/shop/ui/PopupUI.java" />
-        <option value="$PROJECT_DIR$/src/shop/ui/UI.java" />
-        <option value="$PROJECT_DIR$/src/shop/ui/UIFormMenu.java" />
-        <option value="$PROJECT_DIR$/src/shop/main/StatesEnum.java" />
         <option value="$PROJECT_DIR$/src/shop/ui/UIFormTest_v2.java" />
-        <option value="$PROJECT_DIR$/src/shop/ui/UIFormBuilder.java" />
         <option value="$PROJECT_DIR$/src/shop/ui/UIFormMenuBuilder.java" />
         <option value="$PROJECT_DIR$/src/shop/main/CTRLState.java" />
-        <option value="$PROJECT_DIR$/src/shop/main/Control.java" />
-        <option value="$PROJECT_DIR$/src/shop/main/ControlEnumState.java" />
         <option value="$PROJECT_DIR$/src/shop/ui/UIForm.java" />
         <option value="$PROJECT_DIR$/src/shop/ui/UIMenu.java" />
+        <option value="$PROJECT_DIR$/src/shop/ui/SuperUIInterface.java" />
+        <option value="$PROJECT_DIR$/src/shop/ui/SuperUIFactory.java" />
+        <option value="$PROJECT_DIR$/src/shop/ui/UIFactory.java" />
         <option value="$PROJECT_DIR$/src/shop/ui/UIMenuBuilder.java" />
+        <option value="$PROJECT_DIR$/src/shop/ui/MenuBuilder.java" />
+        <option value="$PROJECT_DIR$/src/shop/ui/FormBuilder.java" />
+        <option value="$PROJECT_DIR$/src/shop/ui/UIView.java" />
+        <option value="$PROJECT_DIR$/src/shop/ui/UI_FM_Interface.java" />
+        <option value="$PROJECT_DIR$/src/shop/main/ControlEnumState.java" />
+        <option value="$PROJECT_DIR$/src/shop/ui/UI.java" />
+        <option value="$PROJECT_DIR$/src/shop/ui/PopupUI.java" />
+        <option value="$PROJECT_DIR$/src/shop/ui/TextUI.java" />
+        <option value="$PROJECT_DIR$/src/shop/data/Data.java" />
+        <option value="$PROJECT_DIR$/src/shop/main/Control.java" />
+        <option value="$PROJECT_DIR$/src/shop/ui/UIFormMenu.java" />
+        <option value="$PROJECT_DIR$/src/shop/ui/UIFormBuilder.java" />
+        <option value="$PROJECT_DIR$/src/shop/data/InventorySet.java" />
+        <option value="$PROJECT_DIR$/src/shop/main/StatesEnum.java" />
       </list>
     </option>
   </component>
@@ -237,7 +199,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552164930496" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552271241060" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -258,32 +220,38 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="shop.main.Main" />
+  <component name="RunManager" selected="JUnit.DataTEST">
+    <configuration name="DataTEST" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw-01-04" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="shop.main.*" />
+          <option name="PATTERN" value="shop.data.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="shop.data" />
+      <option name="MAIN_CLASS_NAME" value="shop.data.DataTEST" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TEST2 and 1 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InventoryTEST" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw-01-04" />
-      <option name="TEST_OBJECT" value="pattern" />
-      <patterns>
-        <pattern testClass="shop.main.TEST2" />
-        <pattern testClass="shop.main.TEST1" />
-      </patterns>
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="shop.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="shop.data" />
+      <option name="MAIN_CLASS_NAME" value="shop.data.InventoryTEST" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TEST2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TEST1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw-01-04" />
       <extension name="coverage">
         <pattern>
@@ -292,20 +260,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="shop.main" />
-      <option name="MAIN_CLASS_NAME" value="shop.main.TEST2" />
+      <option name="MAIN_CLASS_NAME" value="shop.main.TEST1" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="myTest and 2 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VideoTEST" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw-01-04" />
-      <option name="TEST_OBJECT" value="pattern" />
-      <patterns>
-        <pattern testClass="shop.main.myTest" />
-        <pattern testClass="shop.main.TEST1" />
-        <pattern testClass="shop.main.TEST2" />
-      </patterns>
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="shop.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="shop.data" />
+      <option name="MAIN_CLASS_NAME" value="shop.data.VideoTEST" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -327,11 +298,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.DataTEST" />
+        <item itemvalue="JUnit.VideoTEST" />
+        <item itemvalue="JUnit.InventoryTEST" />
         <item itemvalue="JUnit.myTest" />
-        <item itemvalue="JUnit.TEST2 and 1 more" />
-        <item itemvalue="JUnit.myTest and 2 more" />
-        <item itemvalue="JUnit.TEST2" />
+        <item itemvalue="JUnit.TEST1" />
       </list>
     </recent_temporary>
   </component>
@@ -358,28 +329,17 @@
       <option name="project" value="LOCAL" />
       <updated>1551826586705</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Control-Done">
+      <created>1552164965193</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1552164965193</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DataTEST - 2019.02.19 at 16h 31m 45s.xml">
-      <configuration name="DataTEST" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="InventoryTEST - 2019.02.19 at 16h 31m 54s.xml">
-      <configuration name="InventoryTEST" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VideoTEST - 2019.02.19 at 16h 32m 02s.xml">
-      <configuration name="VideoTEST" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TEST1 - 2019.02.19 at 16h 32m 13s.xml">
-      <configuration name="TEST1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TEST2 - 2019.02.19 at 16h 32m 19s.xml">
-      <configuration name="TEST2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="myTest - 2019.02.19 at 16h 32m 25s.xml">
-      <configuration name="myTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="myTest - 2019.02.19 at 16h 32m 43s.xml">
       <configuration name="myTest" configurationId="JUnit" />
     </history-entry>
@@ -392,24 +352,73 @@
     <history-entry file="myTest - 2019.02.21 at 18h 09m 56s.xml">
       <configuration name="myTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TEST2 - 2019.03.10 at 18h 44m 42s.xml">
+      <configuration name="TEST2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TEST1 - 2019.03.10 at 18h 44m 48s.xml">
+      <configuration name="TEST1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="myTest - 2019.03.10 at 18h 44m 54s.xml">
+      <configuration name="myTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="InventoryTEST - 2019.03.10 at 18h 45m 03s.xml">
+      <configuration name="InventoryTEST" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VideoTEST - 2019.03.10 at 18h 45m 10s.xml">
+      <configuration name="VideoTEST" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DataTEST - 2019.03.10 at 18h 45m 17s.xml">
+      <configuration name="DataTEST" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="10673000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22051696" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49882075" visible="true" weight="0.16666667" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Favorites" order="6" sideWeight="0.5011792" side_tool="true" weight="0.16666667" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.18082191" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.13469388" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3265306" />
+      <window_info anchor="bottom" id="Duplicate detector" order="13" weight="0.32941177" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49882075" visible="true" weight="0.16666667" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.5011792" side_tool="true" weight="0.16666667" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.13469388" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -430,38 +439,6 @@
       <window_info anchor="right" id="Maven" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20181043" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26810476" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3276923" />
-      <window_info anchor="bottom" id="Duplicate detector" order="13" weight="0.32941177" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,77 +446,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="T1" />
-    <option name="LAST_COMMIT_MESSAGE" value="T1" />
+    <MESSAGE value="Control-Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Control-Done" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/shop/main/TEST2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/main/myTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/data/InventoryTEST.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="85" column="4" lean-forward="true" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/data/Video.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/main/TEST1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/source/template/ftoc/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-223" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/source/template/sort/BubbleSorter.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/command/CommandHistoryFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shop/command/CommandHistoryTEST.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/data/CmdAdd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/command/CommandHistoryObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -569,30 +483,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/data/Data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#773#774#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/data/Inventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/data/InventorySet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="77" selection-start-line="77" selection-end-line="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shop/ui/UIError.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -610,62 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/data/VideoTEST.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/data/VideoObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-735">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/data/DataTEST.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/ui/UI_FM_Interface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/ui/TextUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="36" column="3" lean-forward="true" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/ui/UI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/ui/UIFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shop/ui/UIFormMenuBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
@@ -675,13 +509,6 @@
             <element signature="e#889#890#0" expanded="true" />
             <element signature="e#949#950#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/main/ControlState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -699,67 +526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/main/CTRLState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="62" column="24" lean-forward="true" selection-end-line="216" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/main/Control.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-246">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2221#2222#0" expanded="true" />
-            <element signature="e#2267#2268#0" expanded="true" />
-            <element signature="e#2631#2632#0" expanded="true" />
-            <element signature="e#2680#2681#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/main/StatesEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/main/ControlEnumState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-307">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#739#740#0" expanded="true" />
-            <element signature="e#767#768#0" expanded="true" />
-            <element signature="e#899#900#0" expanded="true" />
-            <element signature="e#924#925#0" expanded="true" />
-            <element signature="e#1327#1328#0" expanded="true" />
-            <element signature="e#4051#4052#0" expanded="true" />
-            <element signature="e#4116#4117#0" expanded="true" />
-            <element signature="e#5835#5836#0" expanded="true" />
-            <element signature="e#5921#5922#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/ui/UIFormTest_v2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/ui/UIForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shop/ui/UIMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="461">
@@ -771,17 +537,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/ui/UIFormMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shop/ui/UIFormTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/main/ControlState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/ui/UIForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/main/CTRLState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="62" column="24" lean-forward="true" selection-end-line="216" />
         </state>
       </provider>
     </entry>
@@ -792,34 +572,250 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/ui/UIMenuBuilder.java">
+    <entry file="file://$PROJECT_DIR$/hw-01-04.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/ui/UIFormTest_v2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
+        <state relative-caret-position="525">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/ui/UIFormBuilder.java">
+    <entry file="file://$PROJECT_DIR$/src/shop/ui/SuperUIInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        <state relative-caret-position="45">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="7" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/ui/SuperUIFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="66" selection-start-line="3" selection-start-column="66" selection-end-line="3" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/data/Inventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/ui/UIFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="22" />
+          <folding>
+            <element signature="e#317#318#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/ui/FormBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/ui/Form_Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/ui/MenuBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/ui/UIView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/ui/UI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/shop/ui/PopupUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="52" column="14" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
+        <state relative-caret-position="164">
+          <caret line="43" column="45" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/ui/SuperUIFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/shop/data/Video.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/data/VideoObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-493">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/ui/TextUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/ui/UIMenuBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/ui/UIFormMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="47" lean-forward="true" selection-start-line="2" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/ui/UI_FM_Interface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/main/TEST2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/main/TEST1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/main/myTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/data/InventoryTEST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/data/VideoTEST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/data/DataTEST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/ui/UIFormBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/command/CommandHistoryObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/data/CmdAdd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/data/Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-79">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/main/Control.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/main/ControlEnumState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/main/StatesEnum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/data/InventorySet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="26" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

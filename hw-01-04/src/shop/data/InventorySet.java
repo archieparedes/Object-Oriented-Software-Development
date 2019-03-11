@@ -6,7 +6,7 @@ import shop.command.Command;
 import shop.command.UndoableCommand;
 import shop.command.CommandHistory;
 import shop.command.CommandHistoryFactory;
-
+import java.util.concurrent.ConcurrentHashMap;
 /**
  * Implementation of Inventory interface.
  * @see Data
@@ -14,10 +14,17 @@ import shop.command.CommandHistoryFactory;
 final class InventorySet implements Inventory {
   private Map<Video,Record> _data;
   private final CommandHistory _history;
+  private final Map<String, String> _cons;
 
   InventorySet() {
     _data = new HashMap<Video,Record>();
     _history = CommandHistoryFactory.newCommandHistory();
+    _cons = new ConcurrentHashMap<>();
+  }
+
+  public String intern(String s) {
+    String exist = _cons.putIfAbsent(s, s);
+    return (exist == null) ? s : exist;
   }
 
   /**

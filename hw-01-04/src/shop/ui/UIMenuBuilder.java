@@ -3,12 +3,12 @@ package shop.ui;
 import java.util.ArrayList;
 import java.util.List;
 
-final public class UIMenuBuilder {
+final class UIMenuBuilder implements SuperUIInterface, MenuBuilder{
   private final List _menu;
   public UIMenuBuilder() {
     _menu = new ArrayList();
   }
-
+  private static SuperUIFactory SuperUI = new SuperUIFactory();
 
   public UIFormMenu toUIMenu(String heading) {
     if (null == heading)
@@ -18,7 +18,7 @@ final public class UIMenuBuilder {
     UIFormMenu.Pair[] array = new UIFormMenu.Pair[_menu.size()];
     for (int i = 0; i < _menu.size(); i++)
       array[i] = (UIFormMenu.Pair) (_menu.get(i));
-    return new UIFormMenu(heading, array);
+    return (UIFormMenu)SuperUI.launch("UIFM",heading,array);//new UIFormMenu(heading, array);
   }
   public void add(String prompt, UIMenuAction action) {
     if (null == action)

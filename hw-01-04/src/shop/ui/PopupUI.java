@@ -5,7 +5,7 @@ import sun.reflect.annotation.ExceptionProxy;
 import javax.swing.*;
 //import java.io.IOException;
 
-final class PopupUI implements UI {
+final class PopupUI implements UI, SuperUIInterface{
   PopupUI() {}
 
   public void displayMessage(String message) {
@@ -16,7 +16,7 @@ final class PopupUI implements UI {
     JOptionPane.showMessageDialog(null,message,"Error",JOptionPane.ERROR_MESSAGE);
   }
 
-  public void processMenu(UIFormMenu menu) {
+  public void processMenu(UI_FM_Interface menu) {
     StringBuffer b = new StringBuffer();
     b.append(menu.getHeading());
     b.append("\n");
@@ -41,7 +41,7 @@ final class PopupUI implements UI {
     menu.runAction(selection);
   }
 
-  public String[] processForm(UIFormMenu form) {
+  public String[] processForm(UI_FM_Interface form) {
     String[] pF = new String[form.size()];
     int i = 0;
     UIMenuBuilder menuBuilder = new UIMenuBuilder();

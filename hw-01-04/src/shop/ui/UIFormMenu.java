@@ -1,6 +1,6 @@
 package shop.ui;
 
-public final class UIFormMenu implements UI_FM_Interface {
+final class UIFormMenu implements UI_FM_Interface, SuperUIInterface {
     private final String _heading;
     private final Pair[] _t;
 
@@ -44,5 +44,4 @@ public final class UIFormMenu implements UI_FM_Interface {
     public void runAction(int i) {
         _t[i].action.run();
     }
-
 }

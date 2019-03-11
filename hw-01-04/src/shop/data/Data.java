@@ -7,6 +7,7 @@ import shop.command.UndoableCommand;
  * A static class for accessing data objects.
  */
 public class Data {
+
   private Data() {}
   /**
    * @return a new Inventory.
@@ -50,6 +51,13 @@ public class Data {
           throw new IllegalArgumentException();
       return new CmdAdd((InventorySet) inventory, video, change);
   }
+
+  static public String intern(Inventory inventory, Video video) {
+      if(!(inventory instanceof InventorySet))
+          throw new IllegalArgumentException();
+      return((InventorySet) inventory).intern(video.toString());
+
+    }
 
   /**
    * @param inventory inventory

@@ -4,11 +4,9 @@ import shop.data.Data;
 import shop.data.Inventory;
 import shop.data.Record;
 import shop.data.Video;
-import shop.ui.UIMenuAction;
-import shop.ui.UIFormMenu;
-import shop.ui.UI;
-import shop.ui.UIFormTest;
-import shop.ui.UIFormBuilder;
+import shop.ui.*;
+
+import java.text.Normalizer;
 import java.util.Comparator;
 import java.util.Iterator;
 
@@ -24,8 +22,9 @@ enum ControlEnumState {
 
     private static UI _ui = null;
     private static Inventory _inventory = null;
-    private static UIFormMenu _getVideoForm;
+    private static UI_FM_Interface _getVideoForm;
     private static UIFormTest _numberTest;
+    private static SuperUIFactory SuperUI = new SuperUIFactory();
 
     ControlEnumState(UIMenuAction r){ // init UIMenuAction interface
         this.ri = r;
@@ -36,7 +35,7 @@ enum ControlEnumState {
     }
 
     static class INIT{
-        public INIT(UI ui, Inventory inventory, UIFormMenu getVideoForm, UIFormTest nt) {
+        public INIT(UI ui, Inventory inventory, UI_FM_Interface getVideoForm, UIFormTest nt) {
             _ui = ui;
             _inventory = inventory;
             _getVideoForm = getVideoForm;
@@ -58,7 +57,7 @@ enum ControlEnumState {
                 return;
             }
             Video v = Data.newVideo(result1[0], Integer.parseInt(result1[1]), result1[2]); // title, year, director
-            UIFormBuilder f = new UIFormBuilder();
+            FormBuilder f = (FormBuilder)SuperUI.launch("UIFB",null,null);
 
             f.add("Number of copies to add/remove", _numberTest);
             String[] result2 = _ui.processForm(f.toUIForm(""));
