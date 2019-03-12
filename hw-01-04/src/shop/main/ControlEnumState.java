@@ -5,37 +5,36 @@ import shop.data.Inventory;
 import shop.data.Record;
 import shop.data.Video;
 import shop.ui.*;
-
-import java.text.Normalizer;
 import java.util.Comparator;
 import java.util.Iterator;
 
 enum ControlEnumState {
-    ADD_REMOVE(new addremove()),
+    ADD_REMOVE(new addremove()), // each enumerator calls a new class
     CHECKIN(new checkin()), CHECKOUT(new checkout()),
     PRINT(new printInventory()), UNDO(new undo()),
     REDO(new redo()), TOP10(new top()),
     INIT(new bogus()), CLEAR(new clear()),
     DEFAULT(new def());
 
-    UIMenuAction ri;
+    private UIMenuAction run;
 
     private static UI _ui = null;
     private static Inventory _inventory = null;
     private static UI_FM_Interface _getVideoForm;
     private static UIFormTest _numberTest;
+    
     private static SuperUIFactory SuperUI = new SuperUIFactory();
 
     ControlEnumState(UIMenuAction r){ // init UIMenuAction interface
-        this.ri = r;
+        this.run = r;
     }
 
-    UIMenuAction go(){
-        return ri;
+    UIMenuAction run(){
+        return run;
     }
 
     static class INIT{
-        public INIT(UI ui, Inventory inventory, UI_FM_Interface getVideoForm, UIFormTest nt) {
+        public INIT(UI ui, Inventory inventory, UI_FM_Interface getVideoForm, UIFormTest nt) { // initialize constructors
             _ui = ui;
             _inventory = inventory;
             _getVideoForm = getVideoForm;

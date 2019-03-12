@@ -1,5 +1,5 @@
 package shop.ui;
-
+// this could be inside UIFactory
 public  class SuperUIFactory {
     public SuperUIInterface launch(String i, String head, UIFormMenu.Pair[] t){
         switch(i){
@@ -21,5 +21,11 @@ public  class SuperUIFactory {
             default:
                 return null;
         }
+    }
+
+    static private UI _UI = new PopupUI();
+    //static private UI _UI = new TextUI();
+    static public UI ui () {
+        return _UI;
     }
 }

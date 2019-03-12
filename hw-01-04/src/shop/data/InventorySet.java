@@ -1,9 +1,9 @@
 package shop.data;
 
 import java.util.*;
-
-import shop.command.Command;
-import shop.command.UndoableCommand;
+//
+//import shop.command.Command;
+//import shop.command.UndoableCommand;
 import shop.command.CommandHistory;
 import shop.command.CommandHistoryFactory;
 import java.util.concurrent.ConcurrentHashMap;
@@ -14,17 +14,18 @@ import java.util.concurrent.ConcurrentHashMap;
 final class InventorySet implements Inventory {
   private Map<Video,Record> _data;
   private final CommandHistory _history;
-  private final Map<String, String> _cons;
+  private final Map<String, String> _store;
 
   InventorySet() {
     _data = new HashMap<Video,Record>();
     _history = CommandHistoryFactory.newCommandHistory();
-    _cons = new ConcurrentHashMap<>();
+    _store = new ConcurrentHashMap<>();
   }
 
   public String intern(String s) {
-    String exist = _cons.putIfAbsent(s, s);
-    return (exist == null) ? s : exist;
+    String exist = _store.putIfAbsent(s, s); // if not in hashmap
+    if (exist == null)  return s;
+    else  return exist;
   }
 
   /**

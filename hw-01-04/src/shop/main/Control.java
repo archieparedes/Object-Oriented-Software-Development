@@ -13,6 +13,7 @@ import shop.main.ControlEnumState.INIT;
 //import java.util.Comparator;
 
 final class Control{
+  // uses interfaces to call private classes from UiFactory
   StatesEnum states;
   UIFormTest_v2 UIFormTests;
   private UI_FM_Interface[] _menus;
@@ -59,16 +60,16 @@ final class Control{
   private void addSTART(int stateNum) {
     MenuBuilder m = (MenuBuilder)SuperUI.launch("UIMB",null,null); //new UIMenuBuilder();
     
-    m.add("Default",ControlEnumState.DEFAULT.go());
-    m.add("Add/Remove copies of a video", ControlEnumState.ADD_REMOVE.go());
-    m.add("Check in a video", ControlEnumState.CHECKIN.go());
-    m.add("Check out a video",ControlEnumState.CHECKOUT.go());
-    m.add("Print the inventory",ControlEnumState.PRINT.go());
-    m.add("Clear the inventory", ControlEnumState.CLEAR.go());
-    m.add("Undo", ControlEnumState.UNDO.go());
-    m.add("Redo",ControlEnumState.REDO.go());
-    m.add("Print top ten all time rentals in order", ControlEnumState.TOP10.go());
-    m.add("Initialize with bogus contents", ControlEnumState.INIT.go());
+    m.add("Default",ControlEnumState.DEFAULT.run());
+    m.add("Add/Remove copies of a video", ControlEnumState.ADD_REMOVE.run());
+    m.add("Check in a video", ControlEnumState.CHECKIN.run());
+    m.add("Check out a video",ControlEnumState.CHECKOUT.run());
+    m.add("Print the inventory",ControlEnumState.PRINT.run());
+    m.add("Clear the inventory", ControlEnumState.CLEAR.run());
+    m.add("Undo", ControlEnumState.UNDO.run());
+    m.add("Redo",ControlEnumState.REDO.run());
+    m.add("Print top ten all time rentals in order", ControlEnumState.TOP10.run());
+    m.add("Initialize with bogus contents", ControlEnumState.INIT.run());
     m.add("Exit", new UIMenuAction() {
       public void run() {
         _state = states.EXIT.get();
@@ -79,7 +80,7 @@ final class Control{
   private void addEXIT(int stateNum) {
     MenuBuilder m = (MenuBuilder)SuperUI.launch("UIMB",null,null); //new UIMenuBuilder();
 
-    m.add("Default", ControlEnumState.DEFAULT.go());
+    m.add("Default", ControlEnumState.DEFAULT.run());
     m.add("Yes",
       new UIMenuAction() {
         public void run() { _state = states.EXITED.get(); }

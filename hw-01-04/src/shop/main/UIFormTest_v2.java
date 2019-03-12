@@ -1,6 +1,8 @@
-package shop.ui;
+package shop.main;
 
-public enum UIFormTest_v2 {
+import shop.ui.UIFormTest;
+
+enum UIFormTest_v2 {
     NUMBERTEST(new numberTest()), STRINGTEST(new stringTest()), YEARTEST(new yearTest());
 
     private UIFormTest u;

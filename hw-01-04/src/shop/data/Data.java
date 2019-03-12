@@ -55,8 +55,7 @@ public class Data {
   static public String intern(Inventory inventory, Video video) {
       if(!(inventory instanceof InventorySet))
           throw new IllegalArgumentException();
-      return((InventorySet) inventory).intern(video.toString());
-
+      return((InventorySet) inventory).intern(video.toString()); // apply intern to video.toString()
     }
 
   /**
