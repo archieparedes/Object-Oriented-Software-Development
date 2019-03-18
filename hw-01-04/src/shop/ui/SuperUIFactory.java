@@ -1,6 +1,6 @@
 package shop.ui;
 // this could be inside UIFactory
-public  class SuperUIFactory {
+final public class SuperUIFactory {
     public SuperUIInterface launch(String i, String head, UIFormMenu.Pair[] t){
         switch(i){
             case SuperUIInterface.popup:

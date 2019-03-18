@@ -3,7 +3,7 @@ package shop.data;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
-public class DataTEST extends TestCase {
+final class DataTEST extends TestCase {
   public DataTEST(String name) {
     super(name);
   }

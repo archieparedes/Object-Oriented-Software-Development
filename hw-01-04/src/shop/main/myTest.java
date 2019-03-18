@@ -8,7 +8,7 @@ import shop.data.Inventory;
 import junit.framework.TestCase;
 
 
-public class myTest extends TestCase{
+class myTest extends TestCase{
     private Inventory _inventory = Data.newInventory();
     final RerunnableCommand UNDO = Data.newUndoCmd(_inventory);
     final RerunnableCommand REDO = Data.newRedoCmd(_inventory);

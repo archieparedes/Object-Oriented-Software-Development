@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.Iterator;
-public class InventoryTEST extends TestCase {
+class InventoryTEST extends TestCase {
   public InventoryTEST(String name) {
     super(name);
   }

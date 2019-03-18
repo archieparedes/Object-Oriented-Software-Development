@@ -10,7 +10,7 @@ import shop.data.Video;
 import shop.data.Inventory;
 import java.util.Iterator;
 
-public class TEST1 extends TestCase {
+class TEST1 extends TestCase {
   private Inventory _inventory = Data.newInventory();
   public TEST1(String name) {
     super(name);

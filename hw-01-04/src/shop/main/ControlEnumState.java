@@ -22,7 +22,7 @@ enum ControlEnumState {
     private static Inventory _inventory = null;
     private static UI_FM_Interface _getVideoForm;
     private static UIFormTest _numberTest;
-    
+
     private static SuperUIFactory SuperUI = new SuperUIFactory();
 
     ControlEnumState(UIMenuAction r){ // init UIMenuAction interface
